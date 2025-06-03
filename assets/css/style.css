@@ -1,0 +1,180 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+    /* Dark Mode */
+    body.dark {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+
+header {
+    background: #f8f9fa;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+    nav ul li a, nav ul li button {
+        text-decoration: none;
+        color: inherit;
+        font-size: 1rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+/* Homepage Intro */
+.intro {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+    .intro h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .intro span {
+        color: teal;
+    }
+
+    .intro .btn {
+        margin-top: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        background: teal;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+
+/* Dark theme header */
+body.dark header {
+    background: #1e1e1e;
+}
+
+.projects {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.project-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project-card {
+    background: #f1f1f1;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .project-card h3 {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .project-card p {
+        font-size: 0.95rem;
+        margin: 0.5rem 0 1rem 0;
+    }
+
+    .project-card .btn {
+        padding: 0.5rem 1rem;
+        background: teal;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 0.9rem;
+    }
+
+
+.powerbi-embed iframe {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+}
+
+
+.powerbi-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.powerbi-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+
+.contact {
+    padding: 2rem;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+.contact-info h2 {
+    margin-bottom: 1rem;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.contact-info li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.contact-info a {
+    color: teal;
+    text-decoration: none;
+}
