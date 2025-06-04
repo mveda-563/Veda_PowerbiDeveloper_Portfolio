@@ -12,12 +12,45 @@ body {
     transition: all 0.3s ease;
 }
 
-    /* Dark Mode */
-    body.dark {
-        background-color: #121212;
-        color: #e0e0e0;
-    }
+header, nav, .project-card, .btn {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
+/* === DARK MODE === */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background: #1e1e1e;
+}
+
+body.dark-mode nav a,
+body.dark-mode nav ul li button {
+    color: #e0e0e0;
+}
+
+body.dark-mode .project-card {
+    background: #1e1e1e;
+    color: #f1f1f1;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .project-card h3 {
+    color: #00e0e0;
+}
+
+body.dark-mode .project-card .btn {
+    background: #00bfbf;
+    color: #000;
+}
+
+body.dark-mode .btn:hover {
+    background-color: #009999;
+}
+
+/* Header and Navigation */
 header {
     background: #f8f9fa;
     padding: 1rem 2rem;
@@ -36,14 +69,15 @@ nav ul {
     list-style: none;
 }
 
-    nav ul li a, nav ul li button {
-        text-decoration: none;
-        color: inherit;
-        font-size: 1rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
+nav ul li a,
+nav ul li button {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
 
 /* Homepage Intro */
 .intro {
@@ -51,32 +85,28 @@ nav ul {
     text-align: center;
 }
 
-    .intro h2 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .intro span {
-        color: teal;
-    }
-
-    .intro .btn {
-        display: inline-block;
-        margin-top: 2rem;
-        padding: 0.75rem 1.5rem;
-        background: teal;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        text-decoration: none;
-        font-size: 1rem;
-    }
-
-/* Dark theme header */
-body.dark header {
-    background: #1e1e1e;
+.intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
+.intro span {
+    color: teal;
+}
+
+.intro .btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background: teal;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Projects Page */
 .projects {
     padding: 2rem;
     max-width: 1200px;
@@ -93,40 +123,40 @@ body.dark header {
     background: #f1f1f1;
     padding: 1rem;
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s;
 }
 
-    .project-card:hover {
-        transform: translateY(-5px);
-    }
+.project-card:hover {
+    transform: translateY(-5px);
+}
 
-    .project-card img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-    }
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
 
-    .project-card h3 {
-        margin-top: 1rem;
-        font-size: 1.2rem;
-    }
+.project-card h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
 
-    .project-card p {
-        font-size: 0.95rem;
-        margin: 0.5rem 0 1rem 0;
-    }
+.project-card p {
+    font-size: 0.95rem;
+    margin: 0.5rem 0 1rem 0;
+}
 
-    .project-card .btn {
-        padding: 0.5rem 1rem;
-        background: teal;
-        color: white;
-        text-decoration: none;
-        border-radius: 6px;
-        font-size: 0.9rem;
-    }
+.project-card .btn {
+    padding: 0.5rem 1rem;
+    background: teal;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
 
-
+/* Power BI Embedded Styling */
 .powerbi-embed iframe {
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -134,7 +164,6 @@ body.dark header {
     max-width: 100%;
     height: 400px;
 }
-
 
 .powerbi-container {
     position: relative;
@@ -152,7 +181,7 @@ body.dark header {
     border: 1px solid #ccc;
 }
 
-
+/* Contact Section */
 .contact {
     padding: 2rem;
     max-width: 700px;
