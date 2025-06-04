@@ -1,46 +1,56 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects | Power BI Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Power BI Portfolio</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-    <header> 
-        <nav>
-            <h1>Veda Sahithi</h1>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><button id="dark-toggle">🌓</button></li>
-            </ul>
-        </nav>
-    </header>
+  <header> 
+    <nav>
+      <h1>Veda Sahithi</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><button id="dark-toggle">🌓</button></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main class="projects">
-        <section class="project-grid">
-            <!-- Copy & reuse this block for each project -->
-            <div class="project-card">
-                <img src="assets/images/project1-thumbnail.png" alt="Project 1 Thumbnail">
-                <h3>Sales Dashboard</h3>
-                <p>Interactive dashboard showing regional and monthly sales trends with drill-down and filters.</p>
-                <a href="https://app.powerbi.com/view?r=your-report-link" target="_blank" class="btn">View Report</a>
-            </div>
+  <main class="projects">
+    <h2 style="text-align: center; margin-top: 2rem;">My Power BI Projects</h2>
+    <section class="project-grid">
+      
+      <!-- Project Card: Sales Dashboard -->
+      <div class="project-card">
+        <img src="assets/images/Bank Marketing Campaign Analysis.png" alt="Bank Marketing Campaign Analysis">
+        <h3>Sales Dashboard</h3>
+        <p>This Power BI dashboard presents monthly sales trends, revenue by region, and key performance metrics using interactive visuals.</p>
+        <div class="btn-group">
+          <a href="assets/reports/Bank Marketing Campaign Analysis.pdf" target="_blank" class="btn">View PDF</a>
+          <a href="assets/reports/Bank Marketing Campaign Analysis.pbit" download class="btn">Download .PBIT</a>
+        </div>
+      </div>
 
-            <div class="project-card">
-                <img src="assets/images/project2-thumbnail.png" alt="Project 2 Thumbnail">
-                <h3>HR Analytics</h3>
-                <p>Employee attrition analysis using key HR metrics like satisfaction, job level, and overtime.</p>
-                <a href="#" class="btn">View Report</a>
-            </div>
+      <!-- Project Card: HR Analytics -->
+      <div class="project-card">
+        <img src="assets/images/project2-thumbnail.png" alt="HR Analytics Thumbnail">
+        <h3>HR Analytics</h3>
+        <p>Employee attrition analysis using key HR metrics like satisfaction, job level, and overtime.</p>
+        <div class="btn-group">
+          <a href="assets/reports/hr-analytics.pdf" target="_blank" class="btn">View PDF</a>
+          <a href="assets/reports/hr-analytics.pbit" download class="btn">Download .PBIT</a>
+        </div>
+      </div>
 
-            <!-- Add 2-3 more -->
-        </section>
-    </main>
+      <!-- You can duplicate and customize more project cards here -->
 
-    <script src="scripts/main.js"></script>
+    </section>
+  </main>
+
+  <script src="scripts/main.js"></script>
 </body>
 </html>
