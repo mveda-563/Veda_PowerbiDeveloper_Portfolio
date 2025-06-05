@@ -1,336 +1,238 @@
-/* === GENERAL RESET === */
+/* General Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #ffffff;
-  color: #333;
-  transition: all 0.3s ease;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    transition: all 0.3s ease;
 }
 
 header, nav, .project-card, .btn {
-  transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* === DARK MODE === */
 body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
 body.dark-mode header {
-  background: #1e1e1e;
+    background: #1e1e1e;
 }
 
 body.dark-mode nav a,
 body.dark-mode nav ul li button {
-  color: #e0e0e0;
+    color: #e0e0e0;
 }
 
 body.dark-mode .project-card {
-  background: #1e1e1e;
-  color: #f1f1f1;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    background: #1e1e1e;
+    color: #f1f1f1;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
 body.dark-mode .project-card h3 {
-  color: #00e0e0;
+    color: #00e0e0;
 }
 
 body.dark-mode .project-card .btn {
-  background: #00bfbf;
-  color: #000;
+    background: #00bfbf;
+    color: #000;
 }
 
 body.dark-mode .btn:hover {
-  background-color: #009999;
+    background-color: #009999;
 }
 
-/* === HEADER & NAV === */
+/* Header and Navigation */
 header {
-  background: #f8f9fa;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+    background: #f8f9fa;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav h1 {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 nav ul {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    gap: 1rem;
+    list-style: none;
 }
 
 nav ul li a,
 nav ul li button {
-  text-decoration: none;
-  color: inherit;
-  font-size: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-/* === INTRO SECTION === */
+/* Homepage Intro */
 .intro {
-  padding: 3rem 1rem;
-  text-align: center;
+    padding: 3rem 1rem;
+    text-align: center;
 }
 
 .intro h2 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .intro span {
-  color: teal;
+    color: teal;
 }
 
 .intro .btn {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.75rem 1.5rem;
-  background: teal;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 1rem;
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background: teal;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
 }
 
-/* === PROJECTS === */
+/* Projects Page */
 .projects {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .project-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .project-card {
-  background: #f1f1f1;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s;
+    background: #f1f1f1;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
+/* Icon + Title Layout for Project Cards */
 .project-icon-title {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .project-icon-title h3 {
-  margin: 0;
-  font-size: 1.2rem;
+    margin: 0;
+    font-size: 1.2rem;
 }
 
 .project-icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
 }
 
+/* Description Text */
 .project-card p {
-  font-size: 0.95rem;
-  margin: 0.5rem 0 1rem 0;
+    font-size: 0.95rem;
+    margin: 0.5rem 0 1rem 0;
 }
 
+/* Lists inside project cards */
 .project-card ul {
-  margin-left: 1.25rem;
-  margin-bottom: 1rem;
-  list-style-type: disc;
-  color: #555;
+    margin-left: 1.25rem;
+    margin-bottom: 1rem;
+    list-style-type: disc;
+    color: #555;
 }
 
 .project-card ul li {
-  margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
+/* Buttons */
 .project-card .btn {
-  padding: 0.5rem 1rem;
-  background: teal;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
+    padding: 0.5rem 1rem;
+    background: teal;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
 }
 
 .project-card .btn:hover {
-  background-color: #006666;
-  color: white;
+    background-color: #006666; /* darker teal */
+    color: white;
 }
 
-/* === POWER BI === */
+/* Power BI Embedded Styling */
 .powerbi-embed iframe {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 100%;
-  height: 400px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
 }
 
-/* === RESUME SECTIONS - MINIMAL STYLE === */
-.resume-section {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 0 1rem;
+.powerbi-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
 }
 
-.resume-section h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: teal;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 0.5rem;
+.powerbi-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
 }
 
-.resume-card {
-  padding: 1rem 0;
-  border-bottom: 1px solid #e0e0e0;
+/* Contact Section */
+.contact {
+    padding: 2rem;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
 }
 
-.resume-card:last-child {
-  border-bottom: none;
+.contact-info h2 {
+    margin-bottom: 1rem;
 }
 
-.resume-card h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #222;
-  margin-bottom: 0.25rem;
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
 }
 
-.resume-card span {
-  font-size: 0.95rem;
-  color: #666;
-  display: block;
-  margin-bottom: 0.5rem;
+.contact-info li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
 }
 
-.resume-card ul {
-  padding-left: 1.25rem;
-  color: #444;
-  font-size: 0.95rem;
-}
-
-.resume-card ul li {
-  margin-bottom: 0.5rem;
-}
-
-/* === SKILLS === */
-.skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.skill-category {
-  flex: 1;
-  min-width: 250px;
-}
-
-.skill-category h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.skill-category ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.skill-category ul li::before {
-  content: "•";
-  color: teal;
-  margin-right: 0.5rem;
-}
-
-.skill-category ul li {
-  font-size: 0.95rem;
-  color: #444;
-  margin-bottom: 0.4rem;
-}
-
-/* === CERTIFICATIONS === */
-.certification-list {
-  padding-left: 0;
-  list-style: none;
-}
-
-.certification-list li {
-  margin-bottom: 1.25rem;
-  font-size: 0.95rem;
-  color: #444;
-}
-
-.certification-list li strong {
-  color: #222;
-  display: block;
-  margin-bottom: 0.2rem;
-}
-
-/* === DARK MODE MINIMAL === */
-body.dark-mode .resume-section h2,
-body.dark-mode .resume-card h3,
-body.dark-mode .skill-category h4,
-body.dark-mode .certification-list strong {
-  color: #00e0e0;
-}
-
-body.dark-mode .resume-card span,
-body.dark-mode .resume-card ul,
-body.dark-mode .skill-category ul,
-body.dark-mode .certification-list {
-  color: #ccc;
-}
-
-body.dark-mode .resume-card {
-  border-color: #333;
-}
-
-/* === MOBILE VIEW FIXED === */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  nav ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0.5rem 0;
-  }
-
-  nav ul li {
-    margin: 0.25rem;
-  }
+.contact-info a {
+    color: teal;
+    text-decoration: none;
 }
