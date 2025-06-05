@@ -131,17 +131,25 @@ nav ul li button {
     transform: translateY(-5px);
 }
 
-.project-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+/* Icon + Title Layout for Project Cards */
+.project-icon-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
 }
 
-.project-card h3 {
-    margin-top: 1rem;
+.project-icon-title h3 {
+    margin: 0;
     font-size: 1.2rem;
 }
 
+.project-icon {
+    width: 32px;
+    height: 32px;
+}
+
+/* Description Text */
 .project-card p {
     font-size: 0.95rem;
     margin: 0.5rem 0 1rem 0;
