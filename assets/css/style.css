@@ -196,3 +196,103 @@ nav ul li button {
 .powerbi-container {
     position: relative;
     width
+
+/* === Resume Sections (Education, Experience, Skills, Certifications) === */
+.resume-section {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.resume-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: teal;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+/* Education & Experience Cards */
+.resume-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.resume-card h3 {
+    margin: 0.25rem 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.resume-card span {
+    display: block;
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.resume-card ul {
+    margin-left: 1.5rem;
+    list-style-type: disc;
+    color: #444;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.skill-category {
+    flex: 1;
+    min-width: 250px;
+}
+
+.skill-category h4 {
+    color: #444;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.skill-category ul {
+    padding-left: 1.25rem;
+    list-style-type: square;
+}
+
+/* Certifications */
+.certification-list {
+    padding-left: 1rem;
+    list-style-type: square;
+}
+
+.certification-list li {
+    margin-bottom: 1rem;
+}
+
+.certification-list strong {
+    color: #222;
+}
+
+/* === Dark Mode Overrides === */
+body.dark-mode .resume-card {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .resume-section h2,
+body.dark-mode .resume-card h3,
+body.dark-mode .skill-category h4,
+body.dark-mode .certification-list strong {
+    color: #00e0e0;
+}
+
+body.dark-mode .resume-card ul,
+body.dark-mode .skill-category ul,
+body.dark-mode .certification-list {
+    color: #ccc;
+}
+
