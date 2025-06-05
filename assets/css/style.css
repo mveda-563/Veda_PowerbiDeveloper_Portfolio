@@ -147,6 +147,7 @@ nav ul li button {
 .project-icon {
     width: 32px;
     height: 32px;
+    object-fit: contain;
 }
 
 /* Description Text */
@@ -155,6 +156,19 @@ nav ul li button {
     margin: 0.5rem 0 1rem 0;
 }
 
+/* Lists inside project cards */
+.project-card ul {
+    margin-left: 1.25rem;
+    margin-bottom: 1rem;
+    list-style-type: disc;
+    color: #555;
+}
+
+.project-card ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Buttons */
 .project-card .btn {
     padding: 0.5rem 1rem;
     background: teal;
@@ -162,6 +176,12 @@ nav ul li button {
     text-decoration: none;
     border-radius: 6px;
     font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.project-card .btn:hover {
+    background-color: #006666; /* darker teal */
+    color: white;
 }
 
 /* Power BI Embedded Styling */
@@ -175,44 +195,4 @@ nav ul li button {
 
 .powerbi-container {
     position: relative;
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 aspect ratio */
-}
-
-.powerbi-responsive iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
-
-/* Contact Section */
-.contact {
-    padding: 2rem;
-    max-width: 700px;
-    margin: auto;
-    text-align: center;
-}
-
-.contact-info h2 {
-    margin-bottom: 1rem;
-}
-
-.contact-info ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-}
-
-.contact-info li {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-}
-
-.contact-info a {
-    color: teal;
-    text-decoration: none;
-}
+    width
