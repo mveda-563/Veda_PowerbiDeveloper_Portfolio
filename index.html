@@ -1,144 +1,361 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veda Sahithi | Power BI Portfolio</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    /* Accordion Style */
-    .accordion h3 {
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.5em;
-      background-color: #f0f0f0;
-      border-radius: 6px;
-      margin-bottom: 0.5em;
-    }
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-      padding-left: 1em;
-    }
-    .accordion-content.open {
-      max-height: 500px; /* enough for content */
-      transition: max-height 0.5s ease-in;
-    }
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      body {
-        font-size: 16px;
-        padding: 1em;
-      }
-      nav ul {
-        flex-direction: column;
-        gap: 0.5em;
-      }
-      nav ul li {
-        text-align: center;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <nav>
-      <h1>Veda Sahithi</h1>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><button id="dark-toggle">🌓</button></li>
-      </ul>
-    </nav>
-  </header>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  transition: all 0.3s ease;
+}
 
-  <main class="home">
-    <section class="intro">
-      <h2>Hello, I'm <span>Veda Sahithi</span></h2>
-      <p>Data Analyst | Power BI Specialist</p>
-      <p>I turn data into insights that drive decisions.</p>
-      <a href="projects.html" class="btn">View My Work</a>
-    </section>
+header, nav, .project-card, .btn {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-    <section class="accordion">
-      <h3 onclick="toggleAccordion(this)">🎓 Education <span>▼</span></h3>
-      <div class="accordion-content">
-        <p><strong>B.Tech in Electronics and Communication Engineering</strong><br />
-        VNR Vignana Jyothi Institute of Engineering and Technology, 2019 – 2023<br />
-        GPA: 8.09/10</p>
-      </div>
+/* === DARK MODE === */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
 
-      <h3 onclick="toggleAccordion(this)">💼 Work Experience <span>▼</span></h3>
-      <div class="accordion-content">
-        <p><strong>Data Engineering Management and Governance Analyst</strong><br />
-        Accenture — June 2025 – Present</p>
-        <ul>
-          <li>Created and maintained Power BI dashboards for business reporting.</li>
-          <li>Worked with Azure Databricks and backend development using DevOps tools.</li>
-          <li>Modified SASS Cubes using GitHub and Visual Studio Code.</li>
-        </ul>
-        <p><strong>Data Engineering Management and Governance Associate</strong><br />
-        Accenture — Aug 2024 – May 2025 (Hyderabad)</p>
-        <ul>
-          <li>Built dashboards using Power BI and DAX.</li>
-          <li>Handled backend changes and DevOps pipelines.</li>
-          <li>Completed user stories on time.</li>
-        </ul>
-      </div>
+body.dark-mode header {
+  background: #1e1e1e;
+}
 
-      <h3 onclick="toggleAccordion(this)">🛠️ Skills <span>▼</span></h3>
-      <div class="accordion-content">
-        <ul>
-          <li><strong>Technical Skills:</strong> Power BI, DAX, SQL, Python (basic)</li>
-          <li><strong>Tools:</strong> Excel, Azure Databricks (basic), Snowflake (basic), GitHub, DevOps, VS Code</li>
-          <li><strong>Soft Skills:</strong> Patience, Communication skills, Diligence</li>
-        </ul>
-      </div>
+body.dark-mode nav a,
+body.dark-mode nav ul li button {
+  color: #e0e0e0;
+}
 
-      <h3 onclick="toggleAccordion(this)">📜 Certifications <span>▼</span></h3>
-      <div class="accordion-content">
-        <ul>
-          <li>
-            <strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong><br />
-            Issued by Microsoft — August 5, 2024<br />
-            <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/28F2B3A4D3310D9E?sharingId=F2154EEB0BC4DFC3" target="_blank" rel="noopener noreferrer">View Certificate</a>
-          </li>
-          <li>
-            <strong>Microsoft Certified: Power BI Data Analyst Associate (PL-300)</strong><br />
-            Issued by Microsoft — May 25, 2025<br />
-            Expires on May 26, 2026<br />
-            <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/D3D27CB2C292B2FD?sharingId=F2154EEB0BC4DFC3" target="_blank" rel="noopener noreferrer">View Certificate</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-  </main>
+body.dark-mode .project-card {
+  background: #1e1e1e;
+  color: #f1f1f1;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
 
-  <script>
-    // Accordion Toggle Function
-    function toggleAccordion(header) {
-      const content = header.nextElementSibling;
-      const allContent = document.querySelectorAll('.accordion-content');
-      allContent.forEach(section => {
-        if (section !== content) section.classList.remove('open');
-      });
-      content.classList.toggle('open');
+body.dark-mode .project-card h3 {
+  color: #00e0e0;
+}
 
-      // Update arrow icon
-      const arrows = document.querySelectorAll('.accordion h3 span');
-      arrows.forEach(arrow => arrow.textContent = '▼');
-      if (content.classList.contains('open')) {
-        header.querySelector('span').textContent = '▲';
-      }
-    }
-  </script>
+body.dark-mode .project-card .btn {
+  background: #00bfbf;
+  color: #000;
+}
 
-  <script src="scripts/main.js"></script>
-</body>
-</html>
+body.dark-mode .btn:hover {
+  background-color: #009999;
+}
+
+/* Header and Navigation */
+header {
+  background: #f8f9fa;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 {
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+nav ul li a,
+nav ul li button {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Homepage Intro */
+.intro {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.intro span {
+  color: teal;
+}
+
+.intro .btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background: teal;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Accordion (Index Page) */
+.accordion h3 {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  margin-bottom: 0.5em;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding-left: 1em;
+}
+
+.accordion-content.open {
+  max-height: 500px;
+  transition: max-height 0.5s ease-in;
+}
+
+/* Accordion List Styling */
+.accordion-content ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  list-style-type: disc;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.accordion-content li {
+  margin-bottom: 0.5rem;
+}
+
+body.dark-mode .accordion-content ul {
+  color: #ccc;
+}
+
+/* Projects Page */
+.projects {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.project-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project-card {
+  background: #f1f1f1;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-icon-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.project-icon-title h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.project-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.project-card ul {
+  margin-left: 1.25rem;
+  margin-bottom: 1rem;
+  list-style-type: disc;
+  color: #555;
+}
+
+.project-card ul li {
+  margin-bottom: 0.5rem;
+}
+
+.project-card .btn {
+  padding: 0.5rem 1rem;
+  background: teal;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.project-card .btn:hover {
+  background-color: #006666;
+  color: white;
+}
+
+/* Power BI Embeds */
+.powerbi-embed iframe {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 100%;
+  height: 400px;
+}
+
+/* Resume Section */
+.resume-section {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.resume-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: teal;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.resume-card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.resume-card h3 {
+  margin: 0.25rem 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.resume-card span {
+  display: block;
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.resume-card ul {
+  margin-left: 1.5rem;
+  list-style-type: disc;
+  color: #444;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.skill-category {
+  flex: 1;
+  min-width: 250px;
+}
+
+.skill-category h4 {
+  color: #444;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.skill-category ul {
+  padding-left: 1.25rem;
+  list-style-type: square;
+}
+
+.certification-list {
+  padding-left: 1rem;
+  list-style-type: square;
+}
+
+.certification-list li {
+  margin-bottom: 1rem;
+}
+
+.certification-list strong {
+  color: #222;
+}
+
+body.dark-mode .resume-card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .resume-section h2,
+body.dark-mode .resume-card h3,
+body.dark-mode .skill-category h4,
+body.dark-mode .certification-list strong {
+  color: #00e0e0;
+}
+
+body.dark-mode .resume-card ul,
+body.dark-mode .skill-category ul,
+body.dark-mode .certification-list {
+  color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 0.5rem;
+  }
+
+  nav ul li {
+    margin: 0.25rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+    padding: 1em;
+  }
+
+  .accordion h3 {
+    font-size: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .accordion h3 span {
+    align-self: flex-end;
+  }
+}
