@@ -26,6 +26,15 @@
       50% { border-color: transparent; }
     }
 
+    /* Mobile fix: disable typing animation and allow wrapping */
+    @media (max-width: 480px) {
+      .typing {
+        white-space: normal; /* allow wrapping */
+        border-right: none;  /* remove blinking cursor */
+        animation: none;     /* disable typing */
+      }
+    }
+
     .about {
       padding: 3rem 1rem;
       max-width: 900px;
