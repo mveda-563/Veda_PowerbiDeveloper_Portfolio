@@ -6,16 +6,20 @@
   <title>Resume | Power BI Portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    /* Additional styles specific to resume page */
-
-    /* Position buttons top right */
-    .top-right-buttons {
-      position: fixed;
-      top: 1rem;
-      right: 1.5rem;
+    /* Buttons container below header aligned right */
+    .buttons-container {
       display: flex;
+      justify-content: flex-end;
       gap: 1rem;
-      z-index: 1000;
+      padding: 1rem 2rem;
+      background-color: #f9f9f9;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* Adjust background for dark mode */
+    body.dark-mode .buttons-container {
+      background-color: #1a1a1a;
+      border-color: #444;
     }
 
     .btn {
@@ -28,13 +32,16 @@
       border: none;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .btn:hover {
       background-color: #006666;
     }
 
-    /* Ensure text readability on dark mode */
+    /* Dark mode button tweaks */
     body.dark-mode .btn {
       background: #00bfbf;
       color: #000;
@@ -56,7 +63,7 @@
     /* Resume content layout */
     main.resume {
       max-width: 800px;
-      margin: 5rem auto 3rem auto; /* leave space for fixed buttons */
+      margin: 2rem auto 3rem auto;
       padding: 1rem 2rem;
     }
 
@@ -102,8 +109,8 @@
     </nav>
   </header>
 
-  <!-- Buttons top right for Download and View Resume -->
-  <div class="top-right-buttons">
+  <!-- Buttons below nav -->
+  <div class="buttons-container">
     <a href="assets/pdf/resume.pdf" download class="btn" title="Download Resume">⬇ Download Resume</a>
     <a href="assets/pdf/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn" title="View Resume">👁️ View Resume</a>
   </div>
