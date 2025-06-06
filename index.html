@@ -5,6 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Veda Sahithi | Power BI Portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Typing Animation */
+    .typing {
+      display: inline-block;
+      border-right: 2px solid teal;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(30, end), blink 0.7s step-end infinite;
+      max-width: 100%;
+      font-weight: bold;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .about {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      color: teal;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 1rem 0;
+    }
+
+    .statement blockquote {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: teal;
+      text-align: center;
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -16,7 +73,6 @@
         <li><a href="resume.html">Resume</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li>
-          <!-- Toggle switch for dark mode -->
           <label class="switch">
             <input type="checkbox" id="dark-mode-toggle" />
             <span class="slider emoji-toggle"></span>
@@ -28,15 +84,31 @@
 
   <main class="home">
     <section class="intro">
-      <h2>Hello, I'm <span>Veda Sahithi</span></h2>
+      <h2 class="typing">Hello, I'm <span>Veda Sahithi</span></h2>
       <p>Data Analyst | Power BI Specialist</p>
       <p>I turn data into insights that drive decisions.</p>
       <a href="projects.html" class="btn">View My Work</a>
     </section>
+
+    <section class="about">
+      <img src="assets/img/worker.gif" alt="Veda Sahithi Profile GIF" />
+      <h2>About Me</h2>
+      <p>
+        I’m a data enthusiast passionate about uncovering trends, solving problems, and delivering insights through storytelling and dashboards. With a strong foundation in Power BI, SQL, and Excel, I specialize in translating raw data into actionable business intelligence.
+      </p>
+      <p>
+        Whether it's sales, marketing, finance, or operations, I aim to make data-driven decisions accessible and intuitive. I believe visualizations should not only look good but speak clearly — helping stakeholders make faster, smarter choices.
+      </p>
+    </section>
+
+    <section class="statement">
+      <blockquote>
+        “I believe every dataset has a story — and I’m here to tell it visually.”
+      </blockquote>
+    </section>
   </main>
 
   <script>
-    // JavaScript for sun/moon toggle dark mode
     const toggle = document.getElementById('dark-mode-toggle');
     const isDark = localStorage.getItem('theme') === 'dark';
 
