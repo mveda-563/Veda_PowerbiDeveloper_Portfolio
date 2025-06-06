@@ -32,14 +32,45 @@
       color: white;
     }
 
-    /* PDF iframe styling */
-    .pdf-viewer iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin-top: 2rem;
+    /* Resume content styling */
+    .resume-content {
+      max-width: 900px;
+      margin: 4rem auto 3rem auto; /* Add top margin to avoid buttons */
+      padding: 0 1rem;
+    }
+
+    .resume-content h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    /* Section headings */
+    .resume-section {
+      margin-bottom: 2rem;
+    }
+
+    .resume-section h3 {
+      color: teal;
+      margin-bottom: 0.75rem;
+      border-bottom: 2px solid teal;
+      padding-bottom: 0.25rem;
+      font-size: 1.4rem;
+    }
+
+    /* Lists */
+    ul {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+      color: #444;
+    }
+
+    /* Dates and minor info styling */
+    .minor-info {
+      font-style: italic;
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
@@ -72,9 +103,79 @@
   <main class="resume">
     <section class="resume-content">
       <h2>Resume</h2>
-      <p>You can download or view my resume using the buttons on the top right corner.</p>
-      <div class="pdf-viewer">
-        <iframe src="assets/pdf/resume.pdf" frameborder="0" title="Embedded Resume PDF"></iframe>
+
+      <!-- Education -->
+      <div class="resume-section">
+        <h3>Education</h3>
+        <p><strong>Bachelor of Technology in Electronics and Communication Engineering (ECE)</strong></p>
+        <p>VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad, India</p>
+        <p class="minor-info">2019 – 2023 | CGPA: 8.09 / 10</p>
+      </div>
+
+      <!-- Certifications -->
+      <div class="resume-section">
+        <h3>Certifications</h3>
+        <ul>
+          <li>
+            <strong>Microsoft Certified: Power BI Data Analyst Associate PL-300</strong><br />
+            Issued by Microsoft<br />
+            Expires May 26, 2026 | Earned May 25, 2025<br />
+            <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/D3D27CB2C292B2FD?sharingId=F2154EEB0BC4DFC3" target="_blank" rel="noopener noreferrer">View Certification</a>
+          </li>
+          <li>
+            <strong>Microsoft Certified: Azure Fundamentals AZ-900</strong><br />
+            Issued by Microsoft<br />
+            Issued August 5, 2024<br />
+            <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/28F2B3A4D3310D9E?sharingId=F2154EEB0BC4DFC3" target="_blank" rel="noopener noreferrer">View Certification</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Work Experience -->
+      <div class="resume-section">
+        <h3>Work Experience</h3>
+        <p><strong>Data Engineer, Management and Governance Analyst</strong> (Promoted June 2025)</p>
+        <p>Accenture | August 2023 – Present</p>
+        <ul>
+          <li>Create Power BI reports as per requirements</li>
+          <li>Analyze data and perform backend cleaning using Azure Databricks</li>
+          <li>Push data to Snowflake and add data to SaaS cubes via GitHub</li>
+        </ul>
+      </div>
+
+      <!-- Skills -->
+      <div class="resume-section">
+        <h3>Technical Skills</h3>
+        <ul>
+          <li>Power BI, DAX, SQL</li>
+          <li>Snowflake (basic), Azure Databricks (basic), Python (basic)</li>
+          <li>Excel</li>
+        </ul>
+      </div>
+
+      <div class="resume-section">
+        <h3>Soft Skills</h3>
+        <ul>
+          <li>Problem Solving</li>
+          <li>Teamwork</li>
+          <li>Adaptability</li>
+          <li>Time Management</li>
+        </ul>
+      </div>
+
+      <!-- Additional -->
+      <div class="resume-section">
+        <h3>Languages</h3>
+        <ul>
+          <li>Telugu (Fluent)</li>
+          <li>English (Fluent)</li>
+          <li>Hindi (Basic)</li>
+        </ul>
+      </div>
+
+      <div class="resume-section">
+        <h3>Awards & Honors</h3>
+        <p>Promotion to Data Engineer, Management and Governance Analyst – June 2025</p>
       </div>
     </section>
   </main>
