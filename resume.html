@@ -6,70 +6,78 @@
   <title>Resume | Power BI Portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    /* Floating buttons container */
-    .floating-resume-buttons {
+    /* Additional styles specific to resume page */
+
+    /* Position buttons top right */
+    .top-right-buttons {
       position: fixed;
       top: 1rem;
-      right: 1rem;
+      right: 1.5rem;
       display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      z-index: 9999;
+      gap: 1rem;
+      z-index: 1000;
     }
 
-    /* Smaller buttons for floating */
-    .floating-resume-buttons .btn {
-      padding: 0.5rem 1rem;
-      font-size: 0.9rem;
+    .btn {
+      padding: 0.6rem 1.2rem;
+      background: teal;
+      color: white;
       border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      text-decoration: none;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
       transition: background-color 0.3s ease;
     }
 
-    /* Hover effect */
-    .floating-resume-buttons .btn:hover {
-      background-color: #006666; /* darker teal */
-      color: white;
+    .btn:hover {
+      background-color: #006666;
     }
 
-    /* Resume content styling */
-    .resume-content {
-      max-width: 900px;
-      margin: 4rem auto 3rem auto; /* Add top margin to avoid buttons */
-      padding: 0 1rem;
+    /* Ensure text readability on dark mode */
+    body.dark-mode .btn {
+      background: #00bfbf;
+      color: #000;
+    }
+    body.dark-mode .btn:hover {
+      background-color: #009999;
+      color: #fff;
     }
 
-    .resume-content h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2rem;
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
     }
 
-    /* Section headings */
+    body.dark-mode h2, body.dark-mode h3, body.dark-mode p, body.dark-mode li, body.dark-mode strong {
+      color: #e0e0e0;
+    }
+
+    /* Resume content layout */
+    main.resume {
+      max-width: 800px;
+      margin: 5rem auto 3rem auto; /* leave space for fixed buttons */
+      padding: 1rem 2rem;
+    }
+
     .resume-section {
       margin-bottom: 2rem;
     }
 
     .resume-section h3 {
-      color: teal;
       margin-bottom: 0.75rem;
+      color: teal;
       border-bottom: 2px solid teal;
-      padding-bottom: 0.25rem;
-      font-size: 1.4rem;
+      padding-bottom: 0.3rem;
     }
 
-    /* Lists */
-    ul {
-      list-style-type: disc;
-      padding-left: 1.25rem;
-      color: #444;
+    .resume-section ul {
+      list-style: disc inside;
+      margin-left: 1rem;
+      color: inherit;
     }
 
-    /* Dates and minor info styling */
-    .minor-info {
-      font-style: italic;
-      color: #666;
-      font-size: 0.9rem;
+    .resume-section ul li {
       margin-bottom: 0.5rem;
     }
   </style>
@@ -94,89 +102,73 @@
     </nav>
   </header>
 
-  <!-- Floating Resume Buttons -->
-  <div class="floating-resume-buttons">
-    <a href="assets/pdf/resume.pdf" download class="btn" title="Download PDF Resume">⬇ Download</a>
-    <a href="assets/pdf/resume.pdf" target="_blank" class="btn" title="View Resume">👁️ View</a>
+  <!-- Buttons top right for Download and View Resume -->
+  <div class="top-right-buttons">
+    <a href="assets/pdf/resume.pdf" download class="btn" title="Download Resume">⬇ Download Resume</a>
+    <a href="assets/pdf/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn" title="View Resume">👁️ View Resume</a>
   </div>
 
   <main class="resume">
-    <section class="resume-content">
-      <h2>Resume</h2>
+    <h2>Resume</h2>
 
-      <!-- Education -->
-      <div class="resume-section">
-        <h3>Education</h3>
-        <p><strong>Bachelor of Technology in Electronics and Communication Engineering (ECE)</strong></p>
-        <p>VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad, India</p>
-        <p class="minor-info">2019 – 2023 | CGPA: 8.09 / 10</p>
-      </div>
+    <!-- Education -->
+    <section class="resume-section">
+      <h3>Education</h3>
+      <p><strong>Bachelor of Technology in Electronics and Communication Engineering (ECE)</strong></p>
+      <p>VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad, India</p>
+      <p><em>2019 – 2023</em></p>
+      <p>CGPA: 8.09 / 10</p>
+    </section>
 
-      <!-- Certifications -->
-      <div class="resume-section">
-        <h3>Certifications</h3>
-        <ul>
-          <li>
-            <strong>Microsoft Certified: Power BI Data Analyst Associate PL-300</strong><br />
-            Issued by Microsoft<br />
-            Expires May 26, 2026 | Earned May 25, 2025<br />
-            <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/D3D27CB2C292B2FD?sharingId=F2154EEB0BC4DFC3" target="_blank" rel="noopener noreferrer">View Certification</a>
-          </li>
-          <li>
-            <strong>Microsoft Certified: Azure Fundamentals AZ-900</strong><br />
-            Issued by Microsoft<br />
-            Issued August 5, 2024<br />
-            <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/28F2B3A4D3310D9E?sharingId=F2154EEB0BC4DFC3" target="_blank" rel="noopener noreferrer">View Certification</a>
-          </li>
-        </ul>
-      </div>
+    <!-- Certifications -->
+    <section class="resume-section">
+      <h3>Certifications</h3>
+      <ul>
+        <li>
+          <strong>Microsoft Certified: Power BI Data Analyst Associate PL-300</strong><br />
+          Issued by Microsoft<br />
+          Expires May 26, 2026 | Earned May 25, 2025<br />
+          <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/D3D27CB2C292B2FD?sharingId=F2154EEB0BC4DFC3" target="_blank" rel="noopener noreferrer" class="btn" style="font-size: 0.85rem; padding: 0.3rem 0.7rem;">View Certification</a>
+        </li>
+        <li>
+          <strong>Microsoft Certified: Azure Fundamentals AZ-900</strong><br />
+          Issued by Microsoft<br />
+          Issued August 5, 2024<br />
+          <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/28F2B3A4D3310D9E?sharingId=F2154EEB0BC4DFC3" target="_blank" rel="noopener noreferrer" class="btn" style="font-size: 0.85rem; padding: 0.3rem 0.7rem;">View Certification</a>
+        </li>
+      </ul>
+    </section>
 
-      <!-- Work Experience -->
-      <div class="resume-section">
-        <h3>Work Experience</h3>
-        <p><strong>Data Engineer, Management and Governance Analyst</strong> (Promoted June 2025)</p>
-        <p>Accenture | August 2023 – Present</p>
-        <ul>
-          <li>Create Power BI reports as per requirements</li>
-          <li>Analyze data and perform backend cleaning using Azure Databricks</li>
-          <li>Push data to Snowflake and add data to SaaS cubes via GitHub</li>
-        </ul>
-      </div>
+    <!-- Work Experience -->
+    <section class="resume-section">
+      <h3>Work Experience</h3>
+      <p><strong>Accenture</strong> — Data Engineer, Management and Governance Associate (Aug 2023 – June 2025)</p>
+      <p><strong>Promoted to:</strong> Data Engineer, Management and Governance Analyst (June 2025 – Present)</p>
+      <ul>
+        <li>Develop Power BI reports based on requirements</li>
+        <li>Analyze and clean data using Azure Databricks and DevOps</li>
+        <li>Push data to Snowflake and maintain SaaS cubes via GitHub</li>
+      </ul>
+      <p><em>Technical Skills:</em> Power BI, DAX, SQL, Snowflake (basic), Azure Databricks (basic), Python (basic), Excel</p>
+      <p><em>Soft Skills:</em> Problem solving, teamwork, adaptability, time management</p>
+    </section>
 
-      <!-- Skills -->
-      <div class="resume-section">
-        <h3>Technical Skills</h3>
-        <ul>
-          <li>Power BI, DAX, SQL</li>
-          <li>Snowflake (basic), Azure Databricks (basic), Python (basic)</li>
-          <li>Excel</li>
-        </ul>
-      </div>
+    <!-- Languages -->
+    <section class="resume-section">
+      <h3>Languages</h3>
+      <ul>
+        <li>Telugu (native)</li>
+        <li>English (fluent)</li>
+        <li>Hindi (basic)</li>
+      </ul>
+    </section>
 
-      <div class="resume-section">
-        <h3>Soft Skills</h3>
-        <ul>
-          <li>Problem Solving</li>
-          <li>Teamwork</li>
-          <li>Adaptability</li>
-          <li>Time Management</li>
-        </ul>
-      </div>
-
-      <!-- Additional -->
-      <div class="resume-section">
-        <h3>Languages</h3>
-        <ul>
-          <li>Telugu (Fluent)</li>
-          <li>English (Fluent)</li>
-          <li>Hindi (Basic)</li>
-        </ul>
-      </div>
-
-      <div class="resume-section">
-        <h3>Awards & Honors</h3>
-        <p>Promotion to Data Engineer, Management and Governance Analyst – June 2025</p>
-      </div>
+    <!-- Awards -->
+    <section class="resume-section">
+      <h3>Awards & Honors</h3>
+      <ul>
+        <li>Promotion in June 2025 (less than 2 years tenure)</li>
+      </ul>
     </section>
   </main>
 
