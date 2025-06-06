@@ -5,44 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Veda Sahithi | Power BI Portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    /* Accordion Style */
-    .accordion h3 {
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.5em;
-      background-color: #f0f0f0;
-      border-radius: 6px;
-      margin-bottom: 0.5em;
-    }
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-      padding-left: 1em;
-    }
-    .accordion-content.open {
-      max-height: 500px; /* enough for content */
-      transition: max-height 0.5s ease-in;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      body {
-        font-size: 16px;
-        padding: 1em;
-      }
-      nav ul {
-        flex-direction: column;
-        gap: 0.5em;
-      }
-      nav ul li {
-        text-align: center;
-      }
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -65,79 +27,7 @@
       <p>I turn data into insights that drive decisions.</p>
       <a href="projects.html" class="btn">View My Work</a>
     </section>
-
-    <section class="accordion">
-      <h3 onclick="toggleAccordion(this)">🎓 Education <span>▼</span></h3>
-      <div class="accordion-content">
-        <p><strong>B.Tech in Electronics and Communication Engineering</strong><br />
-        VNR Vignana Jyothi Institute of Engineering and Technology, 2019 – 2023<br />
-        GPA: 8.09/10</p>
-      </div>
-
-      <h3 onclick="toggleAccordion(this)">💼 Work Experience <span>▼</span></h3>
-      <div class="accordion-content">
-        <p><strong>Data Engineering Management and Governance Analyst</strong><br />
-        Accenture — June 2025 – Present</p>
-        <ul>
-          <li>Created and maintained Power BI dashboards for business reporting.</li>
-          <li>Worked with Azure Databricks and backend development using DevOps tools.</li>
-          <li>Modified SASS Cubes using GitHub and Visual Studio Code.</li>
-        </ul>
-        <p><strong>Data Engineering Management and Governance Associate</strong><br />
-        Accenture — Aug 2024 – May 2025 (Hyderabad)</p>
-        <ul>
-          <li>Built dashboards using Power BI and DAX.</li>
-          <li>Handled backend changes and DevOps pipelines.</li>
-          <li>Completed user stories on time.</li>
-        </ul>
-      </div>
-
-      <h3 onclick="toggleAccordion(this)">🛠️ Skills <span>▼</span></h3>
-      <div class="accordion-content">
-        <ul>
-          <li><strong>Technical Skills:</strong> Power BI, DAX, SQL, Python (basic)</li>
-          <li><strong>Tools:</strong> Excel, Azure Databricks (basic), Snowflake (basic), GitHub, DevOps, VS Code</li>
-          <li><strong>Soft Skills:</strong> Patience, Communication skills, Diligence</li>
-        </ul>
-      </div>
-
-      <h3 onclick="toggleAccordion(this)">📜 Certifications <span>▼</span></h3>
-      <div class="accordion-content">
-        <ul>
-          <li>
-            <strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong><br />
-            Issued by Microsoft — August 5, 2024<br />
-            <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/28F2B3A4D3310D9E?sharingId=F2154EEB0BC4DFC3" target="_blank" rel="noopener noreferrer">View Certificate</a>
-          </li>
-          <li>
-            <strong>Microsoft Certified: Power BI Data Analyst Associate (PL-300)</strong><br />
-            Issued by Microsoft — May 25, 2025<br />
-            Expires on May 26, 2026<br />
-            <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/D3D27CB2C292B2FD?sharingId=F2154EEB0BC4DFC3" target="_blank" rel="noopener noreferrer">View Certificate</a>
-          </li>
-        </ul>
-      </div>
-    </section>
   </main>
-
-  <script>
-    // Accordion Toggle Function
-    function toggleAccordion(header) {
-      const content = header.nextElementSibling;
-      const allContent = document.querySelectorAll('.accordion-content');
-      allContent.forEach(section => {
-        if (section !== content) section.classList.remove('open');
-      });
-      content.classList.toggle('open');
-
-      // Update arrow icon
-      const arrows = document.querySelectorAll('.accordion h3 span');
-      arrows.forEach(arrow => arrow.textContent = '▼');
-      if (content.classList.contains('open')) {
-        header.querySelector('span').textContent = '▲';
-      }
-    }
-  </script>
 
   <script src="scripts/main.js"></script>
 </body>
