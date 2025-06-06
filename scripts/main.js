@@ -1,19 +1,19 @@
-// Toggle dark mode
 const toggle = document.getElementById("dark-toggle");
 const body = document.body;
 
-// Check localStorage
+// Load saved theme
 if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark-mode");
+  body.classList.add("dark-mode");
+  toggle.checked = true;
 }
 
-toggle.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-
-    // Save preference
-    if (body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
+// Listen for toggle changes
+toggle.addEventListener("change", () => {
+  if (toggle.checked) {
+    body.classList.add("dark-mode");
+    localStorage.setItem("theme", "dark");
+  } else {
+    body.classList.remove("dark-mode");
+    localStorage.setItem("theme", "light");
+  }
 });
