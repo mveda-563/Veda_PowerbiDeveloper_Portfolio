@@ -208,3 +208,55 @@ nav ul li button {
     color: teal;
     text-decoration: none;
 }
+
+/* === Sun/Moon Dark Mode Toggle === */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider.emoji-toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 24px;
+    transition: 0.4s;
+}
+
+.slider.emoji-toggle:before {
+    content: "🌞";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s;
+}
+
+/* When dark mode is on */
+.switch input:checked + .slider.emoji-toggle {
+    background-color: #444;
+}
+
+.switch input:checked + .slider.emoji-toggle:before {
+    transform: translateX(24px);
+    content: "🌙";
+}
