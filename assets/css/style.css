@@ -156,6 +156,30 @@ nav ul li button {
     font-size: 0.9rem;
 }
 
+/* Icon + Title Layout for Project Cards */
+.project-icon-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.project-icon-title h3 {
+    margin: 0;
+    display: inline;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.project-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
 /* Power BI Embedded Styling */
 .powerbi-embed iframe {
     border: 1px solid #ccc;
