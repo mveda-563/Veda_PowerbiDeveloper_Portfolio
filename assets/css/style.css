@@ -1,367 +1,210 @@
 /* General Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Body & Base */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #ffffff;
-  color: #333;
-  transition: all 0.3s ease;
-  line-height: 1.6;
-  padding: 0 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    transition: all 0.3s ease;
 }
 
-/* Dark Mode */
+header, nav, .project-card, .btn {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* === DARK MODE === */
 body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
 body.dark-mode header {
-  background: #1e1e1e;
+    background: #1e1e1e;
 }
 
 body.dark-mode nav a,
 body.dark-mode nav ul li button {
-  color: #e0e0e0;
+    color: #e0e0e0;
 }
 
 body.dark-mode .project-card {
-  background: #1e1e1e;
-  color: #f1f1f1;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    background: #1e1e1e;
+    color: #f1f1f1;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
 body.dark-mode .project-card h3 {
-  color: #00e0e0;
+    color: #00e0e0;
 }
 
 body.dark-mode .project-card .btn {
-  background: #00bfbf;
-  color: #000;
+    background: #00bfbf;
+    color: #000;
 }
 
 body.dark-mode .btn:hover {
-  background-color: #009999;
-}
-
-body.dark-mode .resume-card {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
-}
-
-body.dark-mode .resume-section h2,
-body.dark-mode .resume-card h3,
-body.dark-mode .skill-category h4,
-body.dark-mode .certification-list strong {
-  color: #00e0e0;
-}
-
-body.dark-mode .resume-card ul,
-body.dark-mode .skill-category ul,
-body.dark-mode .certification-list {
-  color: #ccc;
+    background-color: #009999;
 }
 
 /* Header and Navigation */
 header {
-  background: #f8f9fa;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background: #f8f9fa;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav h1 {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 nav ul {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
+    display: flex;
+    gap: 1rem;
+    list-style: none;
 }
 
 nav ul li a,
 nav ul li button {
-  text-decoration: none;
-  color: inherit;
-  font-size: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 /* Homepage Intro */
 .intro {
-  padding: 3rem 1rem;
-  text-align: center;
+    padding: 3rem 1rem;
+    text-align: center;
 }
 
 .intro h2 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .intro span {
-  color: teal;
+    color: teal;
 }
 
 .intro .btn {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.75rem 1.5rem;
-  background: teal;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.intro .btn:hover {
-  background-color: #006666;
-}
-
-/* Accordion (Index Page) */
-.accordion h3 {
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5em 1em;
-  background-color: #f0f0f0;
-  border-radius: 6px;
-  margin-bottom: 0.5em;
-  user-select: none;
-}
-
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-  padding-left: 1.5em;
-}
-
-.accordion-content.open {
-  max-height: 1000px; /* adjust if necessary */
-  transition: max-height 0.5s ease-in;
-}
-
-/* Accordion Lists */
-.accordion-content ul {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
-  list-style-type: disc;
-  color: #444;
-  font-size: 0.95rem;
-}
-
-.accordion-content li {
-  margin-bottom: 0.5rem;
-}
-
-body.dark-mode .accordion-content ul {
-  color: #ccc;
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background: teal;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
 }
 
 /* Projects Page */
 .projects {
-  padding: 2rem 1rem;
-  max-width: 1200px;
-  margin: auto;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .project-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .project-card {
-  background: #f1f1f1;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
+    background: #f1f1f1;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
-.project-icon-title {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
-.project-icon-title h3 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.project-icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
+.project-card h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
 }
 
 .project-card p {
-  font-size: 0.95rem;
-  margin: 0.5rem 0 1rem 0;
-}
-
-.project-card ul {
-  margin-left: 1.25rem;
-  margin-bottom: 1rem;
-  list-style-type: disc;
-  color: #555;
-}
-
-.project-card ul li {
-  margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    margin: 0.5rem 0 1rem 0;
 }
 
 .project-card .btn {
-  padding: 0.5rem 1rem;
-  background: teal;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
+    padding: 0.5rem 1rem;
+    background: teal;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
 }
 
-.project-card .btn:hover {
-  background-color: #006666;
-  color: white;
-}
-
-/* Power BI Embeds */
+/* Power BI Embedded Styling */
 .powerbi-embed iframe {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 100%;
-  height: 400px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
 }
 
-/* Resume Section */
-.resume-section {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 1rem;
+.powerbi-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
 }
 
-.resume-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: teal;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 0.5rem;
+.powerbi-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
 }
 
-.resume-card {
-  background: #f9f9f9;
-  border-radius: 10px;
-  padding: 1rem 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+/* Contact Section */
+.contact {
+    padding: 2rem;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
 }
 
-.resume-card h3 {
-  margin: 0.25rem 0;
-  font-size: 1.2rem;
-  color: #333;
+.contact-info h2 {
+    margin-bottom: 1rem;
 }
 
-.resume-card span {
-  display: block;
-  font-size: 0.95rem;
-  color: #666;
-  margin-bottom: 0.5rem;
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
 }
 
-.resume-card ul {
-  margin-left: 1.5rem;
-  list-style-type: disc;
-  color: #444;
-}
-
-/* Skills Grid */
-.skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.skill-category {
-  flex: 1;
-  min-width: 250px;
-}
-
-.skill-category h4 {
-  color: #444;
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-}
-
-.skill-category ul {
-  padding-left: 1.25rem;
-  list-style-type: square;
-}
-
-/* Certifications List */
-.certification-list {
-  padding-left: 1rem;
-  list-style-type: square;
-}
-
-.certification-list li {
-  margin-bottom: 1rem;
-}
-
-.certification-list strong {
-  color: #222;
-}
-
-/* Responsive Design */
-
-/* Nav and general flex adjustments */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 0.5rem;
-  }
-  nav ul li {
-    margin: 0.25rem 0;
-  }
-}
-
-/* Mobile-specific styling */
-@media (max-width: 600px) {
-  body {
-    font-size: 16px;
-    padding: 1em;
-  }
-  .accordion h3 {
+.contact-info li {
+    margin: 0.5rem 0;
     font-size: 1rem;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .accordion h3 span {
-    align-self: flex-end;
-  }
+}
+
+.contact-info a {
+    color: teal;
+    text-decoration: none;
 }
