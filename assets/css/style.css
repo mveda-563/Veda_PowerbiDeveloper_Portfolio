@@ -131,20 +131,48 @@ nav ul li button {
     transform: translateY(-5px);
 }
 
-.project-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+/* Icon + Title Layout for Project Cards */
+.project-icon-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
-.project-card h3 {
-    margin-top: 1rem;
+.project-icon-title h3 {
+    margin: 0;
     font-size: 1.2rem;
 }
 
+/* Power BI Icon size adjustment */
+.project-icon {
+    width: 20px !important;
+    height: 20px !important;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Description Text */
 .project-card p {
     font-size: 0.95rem;
     margin: 0.5rem 0 1rem 0;
+}
+
+.project-card ul {
+    margin-left: 1.2rem;
+    margin-bottom: 1rem;
+    list-style-type: disc;
+}
+
+.project-card li {
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+/* Buttons */
+.btn-group {
+    margin-top: 1rem;
 }
 
 .project-card .btn {
@@ -154,30 +182,7 @@ nav ul li button {
     text-decoration: none;
     border-radius: 6px;
     font-size: 0.9rem;
-}
-
-/* Icon + Title Layout for Project Cards */
-.project-icon-title {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #222;
-}
-
-.project-icon-title h3 {
-    margin: 0;
-    display: inline;
-    font-size: inherit;
-    font-weight: inherit;
-}
-
-.project-icon {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
+    margin-right: 0.5rem;
 }
 
 /* Power BI Embedded Styling */
