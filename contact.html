@@ -1,42 +1,61 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | Power BI Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Power BI Portfolio</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>Veda Sahithi</h1> 
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><button id="dark-toggle">🌓</button></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <h1>Veda Sahithi</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <!-- Toggle switch for dark mode -->
+          <label class="switch">
+            <input type="checkbox" id="dark-mode-toggle" />
+            <span class="slider emoji-toggle"></span>
+          </label>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <main class="contact">
-        <section class="contact-info">
-            <h2>Get in Touch</h2>
-            <p>Interested in collaborating or hiring me? Reach out anytime:</p>
+  <main class="contact">
+    <section class="contact-info">
+      <h2>Get in Touch</h2>
+      <p>Interested in collaborating or hiring me? Reach out anytime:</p>
 
-            <ul>
-                <li>👤 <strong>Name:</strong> Veda Sahithi Maddineni</li>
-                <li>📞 <strong>Phone:</strong> <a href="tel:+91 7386752940">+91 7386752940</a></li>
-                <li>📧 <strong>Email:</strong> <a href="mailto:veda4541@gmail.com">veda4541@gmail.com</a></li>
-                <li>🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/veda-maddineni " target="_blank">www.linkedin.com/in/veda-maddineni</a></li>
-            </ul>
+      <ul>
+        <li>👤 <strong>Name:</strong> Veda Sahithi Maddineni</li>
+        <li>📞 <strong>Phone:</strong> <a href="tel:+917386752940">+91 7386752940</a></li>
+        <li>📧 <strong>Email:</strong> <a href="mailto:veda4541@gmail.com">veda4541@gmail.com</a></li>
+        <li>🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/veda-maddineni" target="_blank">www.linkedin.com/in/veda-maddineni</a></li>
+      </ul>
 
+      <p>I'll get back to you within 24–48 hours. Thank you!</p>
+    </section>
+  </main>
 
-            <p>I'll get back to you within 24–48 hours. Thank you!</p>
-        </section>
-    </main>
+  <script>
+    // Dark mode toggle script
+    const toggle = document.getElementById('dark-mode-toggle');
+    const isDark = localStorage.getItem('theme') === 'dark';
 
-    <script src="scripts/main.js"></script>
+    if (isDark) {
+      document.body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    });
+  </script>
 </body>
 </html>
