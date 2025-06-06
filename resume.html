@@ -16,7 +16,6 @@
         <li><a href="resume.html">Resume</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li>
-          <!-- Toggle Switch for Dark Mode -->
           <label class="switch">
             <input type="checkbox" id="dark-mode-toggle" />
             <span class="slider emoji-toggle"></span>
@@ -36,11 +35,65 @@
       <div class="pdf-viewer">
         <iframe src="assets/pdf/resume.pdf" frameborder="0" title="Embedded Resume PDF"></iframe>
       </div>
+
+      <!-- ========== Web Resume Sections ========== -->
+
+      <section class="resume-section">
+        <h3>Education</h3>
+        <p><strong>Bachelor of Technology in ECE</strong><br />
+        VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad, India<br />
+        2019 – 2023<br />
+        CGPA: 8.09 / 10</p>
+      </section>
+
+      <section class="resume-section">
+        <h3>Certifications</h3>
+        <ul>
+          <li>
+            <strong>Microsoft Certified: Power BI Data Analyst Associate (PL-300)</strong><br />
+            Microsoft – Earned: May 25, 2025 · Expires: May 26, 2026<br />
+            <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/D3D27CB2C292B2FD?sharingId=F2154EEB0BC4DFC3" target="_blank">View Certificate</a>
+          </li>
+          <li>
+            <strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong><br />
+            Microsoft – Earned: August 5, 2024<br />
+            <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/28F2B3A4D3310D9E?sharingId=F2154EEB0BC4DFC3" target="_blank">View Certificate</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="resume-section">
+        <h3>Work Experience</h3>
+        <p><strong>Data Engineering, Management & Governance Analyst</strong><br />
+        Accenture, Hyderabad, India<br />
+        Aug 2023 – Present</p>
+        <ul>
+          <li>Developed Power BI dashboards tailored to business requirements.</li>
+          <li>Performed data analysis and backend cleaning using Azure Databricks.</li>
+          <li>Managed data pipelines from development to Snowflake and SSAS cubes.</li>
+          <li>Collaborated via GitHub for version control and deployment.</li>
+        </ul>
+      </section>
+
+      <section class="resume-section">
+        <h3>Skills</h3>
+        <p><strong>Technical:</strong> Power BI, DAX, SQL, Azure Databricks (basic), Snowflake (basic), Python (basic), Excel</p>
+        <p><strong>Soft Skills:</strong> Problem-solving, Teamwork, Adaptability, Time Management</p>
+      </section>
+
+      <section class="resume-section">
+        <h3>Languages</h3>
+        <p>Telugu (native), English (fluent), Hindi (basic)</p>
+      </section>
+
+      <section class="resume-section">
+        <h3>Awards & Honors</h3>
+        <p>Promoted to Analyst in June 2025 (within 2 years of joining)</p>
+      </section>
     </section>
   </main>
 
   <script>
-    // Dark mode toggle script
     const toggle = document.getElementById('dark-mode-toggle');
     const isDark = localStorage.getItem('theme') === 'dark';
 
