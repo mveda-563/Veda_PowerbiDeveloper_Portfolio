@@ -4,8 +4,77 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Veda Sahithi | Power BI Portfolio</title>
+
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    /* Typing Animation */
+    .typing {
+      display: inline-block;
+      border-right: 2px solid teal;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(22, end), blink 0.7s step-end infinite;
+      max-width: 100%;
+      font-weight: bold;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 22ch; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* Mobile fix */
+    @media (max-width: 480px) {
+      .typing {
+        white-space: normal;
+        border-right: none;
+        animation: none;
+      }
+    }
+
+    .about {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      color: teal;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 1rem 0;
+    }
+
+    .statement blockquote {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: teal;
+      text-align: center;
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+  </style>
 </head>
+
 <body>
 <header>
   <nav>
@@ -25,17 +94,48 @@
   </nav>
 </header>
 
-<main>
+<main class="home">
+
+  <!-- HERO / INTRO -->
   <section class="intro">
-    <h2>Hello, I'm <span>Veda Sahithi</span></h2>
-    <p>Power BI Developer | DAX, Data Modeling & Dashboards</p>
+    <h2 class="typing">Hello, I'm <span>Veda Sahithi</span></h2>
+
+    <p><strong>Power BI Developer | DAX, Data Modeling & Interactive Dashboards</strong></p>
+    <p>I turn data into insights that drive decisions.</p>
+
+    <!-- ✅ Buttons visible without scrolling -->
     <div class="hero-buttons">
       <a href="projects.html" class="btn">View Projects</a>
       <a href="resume.html" class="btn">View Resume</a>
     </div>
   </section>
+
+  <!-- ABOUT ME -->
+  <section class="about">
+    <img src="assets/icons/worker.gif" alt="Veda Sahithi Profile GIF" />
+    <h2>About Me</h2>
+
+    <p>
+      I am a Power BI Developer with a strong focus on building interactive dashboards and meaningful reports that turn raw data into actionable insights.
+      I work with Power BI, DAX, Power Query, SQL, and Excel to clean, model, and visualize data effectively.
+    </p>
+
+    <p>
+      I enjoy solving business problems through data storytelling and KPI-driven dashboards.
+      I am actively seeking a Power BI Developer or Data Analyst role where I can contribute to data-driven decision-making.
+    </p>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <blockquote>
+      “I believe every dataset has a story — and I’m here to tell it visually.”
+    </blockquote>
+  </section>
+
 </main>
 
+<!-- ✅ Unified JS -->
 <script src="assets/js/main.js"></script>
 </body>
 </html>
