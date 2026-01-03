@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resume | Power BI Portfolio</title>
+
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <style>
@@ -21,63 +22,54 @@
       border-color: #444;
     }
 
-    .btn {
-      padding: 0.6rem 1.2rem;
-      background: teal;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 1rem;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .btn:hover {
-      background-color: #006666;
-    }
-
-    body.dark-mode .btn {
-      background: #00bfbf;
-      color: #000;
-    }
-
-    body.dark-mode .btn:hover {
-      background-color: #009999;
-      color: #fff;
-    }
-
-    body.dark-mode {
-      background-color: #121212;
-      color: #e0e0e0;
-    }
-
-    body.dark-mode h2,
-    body.dark-mode h3,
-    body.dark-mode p,
-    body.dark-mode li,
-    body.dark-mode strong {
-      color: #e0e0e0;
-    }
-
     main.resume {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto 3rem auto;
       padding: 1rem 2rem;
     }
 
     .resume-section {
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
 
     .resume-section h3 {
-      margin-bottom: 0.75rem;
+      margin-bottom: 1rem;
       color: teal;
       border-bottom: 2px solid teal;
       padding-bottom: 0.3rem;
+    }
+
+    /* ===== SKILL BARS ===== */
+    .skill {
+      margin-bottom: 1rem;
+    }
+
+    .skill-title {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .skill-bar {
+      background: #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 10px;
+    }
+
+    .skill-level {
+      height: 100%;
+      background: teal;
+      border-radius: 8px;
+    }
+
+    body.dark-mode .skill-bar {
+      background: #333;
+    }
+
+    body.dark-mode .skill-level {
+      background: #00bfbf;
     }
 
     .resume-section ul {
@@ -92,116 +84,128 @@
 </head>
 
 <body>
-  <header>
-    <nav>
-      <h1>Veda Sahithi</h1>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li>
-          <label class="switch">
-            <input type="checkbox" id="dark-mode-toggle" />
-            <span class="slider emoji-toggle"></span>
-          </label>
-        </li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <nav>
+    <h1>Veda Sahithi</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li>
+        <label class="switch">
+          <input type="checkbox" id="dark-mode-toggle" />
+          <span class="slider"></span>
+        </label>
+      </li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Resume Buttons -->
-  <div class="buttons-container">
-    <a href="assets/pdf/resume.pdf" download class="btn">⬇ Download Resume</a>
-    <a href="assets/pdf/resume.pdf" target="_blank" class="btn">👁️ View Resume</a>
-  </div>
+<!-- Resume Buttons -->
+<div class="buttons-container">
+  <a href="assets/pdf/resume.pdf" download class="btn">⬇ Download Resume</a>
+  <a href="assets/pdf/resume.pdf" target="_blank" class="btn">👁️ View Resume</a>
+</div>
 
-  <main class="resume">
-    <h2 style="text-align: center;">Profile Overview</h2>
+<main class="resume">
 
-    <!-- Education -->
-    <section class="resume-section">
-      <h3>Education</h3>
-      <p><strong>Bachelor of Technology in Electronics and Communication Engineering (ECE)</strong></p>
-      <p>VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad</p>
-      <p><em>2019 – 2023</em></p>
-      <p>CGPA: 8.09 / 10</p>
-    </section>
+  <h2 style="text-align:center;">Profile Overview</h2>
 
-    <!-- Certifications -->
-    <section class="resume-section">
-      <h3>Certifications</h3>
-      <ul>
-        <li>
-          <strong>🎓 Microsoft Certified: Power BI Data Analyst Associate (PL-300)</strong><br />
-          Issued by Microsoft<br />
-          Earned: May 25, 2025 | Expires: May 26, 2026<br />
-          <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/D3D27CB2C292B2FD?sharingId=F2154EEB0BC4DFC3"
-             target="_blank" class="btn" style="font-size: 0.85rem; padding: 0.3rem 0.7rem;">
-            View Certification
-          </a>
-        </li>
-        <li>
-          <strong>🎓 Microsoft Certified: Azure Fundamentals (AZ-900)</strong><br />
-          Issued: August 5, 2024<br />
-          <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/28F2B3A4D3310D9E?sharingId=F2154EEB0BC4DFC3"
-             target="_blank" class="btn" style="font-size: 0.85rem; padding: 0.3rem 0.7rem;">
-            View Certification
-          </a>
-        </li>
-      </ul>
-    </section>
+  <!-- EDUCATION -->
+  <section class="resume-section">
+    <h3>Education</h3>
+    <p><strong>Bachelor of Technology in Electronics and Communication Engineering (ECE)</strong></p>
+    <p>VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad</p>
+    <p><em>2019 – 2023</em></p>
+    <p>CGPA: 8.09 / 10</p>
+  </section>
 
-    <!-- Skills -->
-    <section class="resume-section">
-      <h3>Skills</h3>
-      <p><strong>BI & Visualization Tools:</strong> Power BI, Power Query</p>
-      <p><strong>Data Analysis & Modeling:</strong> DAX, Data Modeling, KPI Design</p>
-      <p><strong>Data Sources & Tools:</strong> SQL, Excel</p>
-      <p><strong>Techniques:</strong> Data Cleaning, ETL, Data Transformation, Dashboard Design, Data Storytelling</p>
-      <p><strong>Soft Skills:</strong> Analytical Thinking, Problem Solving, Attention to Detail, Business Understanding, Stakeholder Collaboration</p>
-    </section>
+  <!-- CERTIFICATIONS -->
+  <section class="resume-section">
+    <h3>Certifications</h3>
+    <ul>
+      <li>
+        <strong>🎓 Microsoft Certified: Power BI Data Analyst Associate (PL-300)</strong><br />
+        Earned: May 25, 2025 | Expires: May 26, 2026<br />
+        <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/D3D27CB2C292B2FD?sharingId=F2154EEB0BC4DFC3"
+           target="_blank"
+           class="btn"
+           style="font-size:0.85rem; padding:0.3rem 0.7rem;">
+          View Certification
+        </a>
+      </li>
 
-    <!-- Work Experience -->
-    <section class="resume-section">
-      <h3>Work Experience</h3>
+      <li>
+        <strong>🎓 Microsoft Certified: Azure Fundamentals (AZ-900)</strong><br />
+        Issued: August 5, 2024<br />
+        <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/28F2B3A4D3310D9E?sharingId=F2154EEB0BC4DFC3"
+           target="_blank"
+           class="btn"
+           style="font-size:0.85rem; padding:0.3rem 0.7rem;">
+          View Certification
+        </a>
+      </li>
+    </ul>
+  </section>
 
-      <p>
-        <strong>Accenture</strong><br />
-        Data Engineer – Management & Governance Associate (Aug 2023 – June 2025)<br />
-        <strong>Promoted to:</strong> Data Engineer – Management & Governance Analyst (June 2025 – Present)
-      </p>
+  <!-- SKILLS (WITH PROFICIENCY BARS) -->
+  <section class="resume-section">
+    <h3>Skills</h3>
 
-      <ul>
-        <li>Designed and developed interactive Power BI dashboards based on business and reporting requirements.</li>
-        <li>Analyzed, validated, and cleaned data using Azure Databricks to ensure high data quality.</li>
-        <li>Built and maintained data pipelines, pushing curated datasets into Snowflake for analytics use cases.</li>
-        <li>Used GitHub and Azure DevOps for version control, deployment, and maintenance of SaaS cubes.</li>
-        <li>Collaborated with cross-functional teams to support data governance and decision-making.</li>
-      </ul>
+    <div class="skill">
+      <div class="skill-title"><span>Power BI</span><span>90%</span></div>
+      <div class="skill-bar"><div class="skill-level" style="width:90%"></div></div>
+    </div>
 
-    </section>
-  </main>
+    <div class="skill">
+      <div class="skill-title"><span>DAX</span><span>85%</span></div>
+      <div class="skill-bar"><div class="skill-level" style="width:85%"></div></div>
+    </div>
 
-  <script>
-    const toggle = document.getElementById('dark-mode-toggle');
-    const isDark = localStorage.getItem('theme') === 'dark';
+    <div class="skill">
+      <div class="skill-title"><span>Power Query / ETL</span><span>85%</span></div>
+      <div class="skill-bar"><div class="skill-level" style="width:85%"></div></div>
+    </div>
 
-    if (isDark) {
-      document.body.classList.add('dark-mode');
-      toggle.checked = true;
-    }
+    <div class="skill">
+      <div class="skill-title"><span>SQL</span><span>75%</span></div>
+      <div class="skill-bar"><div class="skill-level" style="width:75%"></div></div>
+    </div>
 
-    toggle.addEventListener('change', () => {
-      document.body.classList.toggle('dark-mode');
-      localStorage.setItem(
-        'theme',
-        document.body.classList.contains('dark-mode') ? 'dark' : 'light'
-      );
-    });
-  </script>
+    <div class="skill">
+      <div class="skill-title"><span>Excel</span><span>80%</span></div>
+      <div class="skill-bar"><div class="skill-level" style="width:80%"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-title"><span>Data Modeling & KPI Design</span><span>85%</span></div>
+      <div class="skill-bar"><div class="skill-level" style="width:85%"></div></div>
+    </div>
+
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section class="resume-section">
+    <h3>Work Experience</h3>
+
+    <p>
+      <strong>Accenture</strong><br />
+      Data Engineer – Management & Governance Associate (Aug 2023 – June 2025)<br />
+      <strong>Promoted to:</strong> Data Engineer – Management & Governance Analyst (June 2025 – Present)
+    </p>
+
+    <ul>
+      <li>Designed and developed interactive Power BI dashboards based on business requirements.</li>
+      <li>Performed data analysis, validation, and cleansing using Azure Databricks.</li>
+      <li>Built and maintained data pipelines, pushing curated datasets into Snowflake.</li>
+      <li>Used GitHub and Azure DevOps for version control and SaaS cube maintenance.</li>
+      <li>Collaborated with cross-functional teams to support governance and analytics standards.</li>
+    </ul>
+  </section>
+
+</main>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
-
-
-
