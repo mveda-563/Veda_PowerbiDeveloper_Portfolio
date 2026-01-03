@@ -4,58 +4,108 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Power BI Portfolio</title>
+
   <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-<body>
-  <header>
-    <nav>
-      <h1>Veda Sahithi</h1>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li>
-          <!-- Toggle switch for dark mode -->
-          <label class="switch">
-            <input type="checkbox" id="dark-mode-toggle" />
-            <span class="slider emoji-toggle"></span>
-          </label>
-        </li>
-      </ul>
-    </nav>
-  </header>
 
-  <main class="contact">
-    <section class="contact-info">
-      <h2>Get in Touch</h2>
-      <p>Interested in collaborating or hiring me? Reach out anytime:</p>
-
-      <ul>
-        <li>👤 <strong>Name:</strong> Veda Sahithi Maddineni</li>
-        <li>📞 <strong>Phone:</strong> <a href="tel:+917386752940">+91 7386752940</a></li>
-        <li>📧 <strong>Email:</strong> <a href="mailto:veda4541@gmail.com">veda4541@gmail.com</a></li>
-        <li>🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/veda-maddineni" target="_blank">www.linkedin.com/in/veda-maddineni</a></li>
-      </ul>
-
-      <p>Thank you!</p>
-    </section>
-  </main>
-
-  <script>
-    // Dark mode toggle script
-    const toggle = document.getElementById('dark-mode-toggle');
-    const isDark = localStorage.getItem('theme') === 'dark';
-
-    if (isDark) {
-      document.body.classList.add('dark-mode');
-      toggle.checked = true;
+  <style>
+    .contact-card {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+      text-align: left;
     }
 
-    toggle.addEventListener('change', () => {
-      document.body.classList.toggle('dark-mode');
-      localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-    });
-  </script>
+    body.dark-mode .contact-card {
+      background: #1e1e1e;
+    }
+
+    .contact-card ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1.5rem;
+    }
+
+    .contact-card li {
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+    }
+
+    .contact-card a {
+      color: teal;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .contact-cta {
+      margin-top: 2rem;
+      font-style: italic;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <nav>
+    <h1>Veda Sahithi</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li>
+        <label class="switch">
+          <input type="checkbox" id="dark-mode-toggle" />
+          <span class="slider"></span>
+        </label>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main class="contact">
+
+  <h2>Let’s Connect</h2>
+  <p>
+    I’m open to full-time opportunities, freelance projects, and collaborations related to
+    <strong>Power BI, data analytics, and business intelligence</strong>.
+    Feel free to reach out — I usually respond within 24 hours.
+  </p>
+
+  <section class="contact-card">
+    <ul>
+      <li>
+        👤 <strong>Name:</strong><br />
+        Veda Sahithi Maddineni
+      </li>
+
+      <li>
+        📧 <strong>Email:</strong><br />
+        <a href="mailto:veda4541@gmail.com">veda4541@gmail.com</a>
+      </li>
+
+      <li>
+        📞 <strong>Phone:</strong><br />
+        <a href="tel:+917386752940">+91 73867 52940</a>
+      </li>
+
+      <li>
+        🔗 <strong>LinkedIn:</strong><br />
+        <a href="https://www.linkedin.com/in/veda-maddineni" target="_blank" rel="noopener noreferrer">
+          linkedin.com/in/veda-maddineni
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <p class="contact-cta">
+    Looking forward to connecting and building impactful data solutions together.
+  </p>
+
+</main>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
