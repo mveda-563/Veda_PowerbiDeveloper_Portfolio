@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resume | Power BI Portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+
   <style>
-    /* Buttons container below header aligned right */
     .buttons-container {
       display: flex;
       justify-content: flex-end;
@@ -16,7 +16,6 @@
       border-bottom: 1px solid #ddd;
     }
 
-    /* Adjust background for dark mode */
     body.dark-mode .buttons-container {
       background-color: #1a1a1a;
       border-color: #444;
@@ -41,11 +40,11 @@
       background-color: #006666;
     }
 
-    /* Dark mode button tweaks */
     body.dark-mode .btn {
       background: #00bfbf;
       color: #000;
     }
+
     body.dark-mode .btn:hover {
       background-color: #009999;
       color: #fff;
@@ -56,11 +55,14 @@
       color: #e0e0e0;
     }
 
-    body.dark-mode h2, body.dark-mode h3, body.dark-mode p, body.dark-mode li, body.dark-mode strong {
+    body.dark-mode h2,
+    body.dark-mode h3,
+    body.dark-mode p,
+    body.dark-mode li,
+    body.dark-mode strong {
       color: #e0e0e0;
     }
 
-    /* Resume content layout */
     main.resume {
       max-width: 800px;
       margin: 2rem auto 3rem auto;
@@ -81,7 +83,6 @@
     .resume-section ul {
       list-style: disc inside;
       margin-left: 1rem;
-      color: inherit;
     }
 
     .resume-section ul li {
@@ -89,6 +90,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <nav>
@@ -99,7 +101,6 @@
         <li><a href="resume.html">Resume</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li>
-          <!-- Toggle Switch for Dark Mode -->
           <label class="switch">
             <input type="checkbox" id="dark-mode-toggle" />
             <span class="slider emoji-toggle"></span>
@@ -109,10 +110,10 @@
     </nav>
   </header>
 
-  <!-- Buttons below nav -->
+  <!-- Resume Buttons -->
   <div class="buttons-container">
-    <a href="assets/pdf/resume.pdf" download class="btn" title="Download Resume">⬇ Download Resume</a>
-    <a href="assets/pdf/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn" title="View Resume">👁️ View Resume</a>
+    <a href="assets/pdf/resume.pdf" download class="btn">⬇ Download Resume</a>
+    <a href="assets/pdf/resume.pdf" target="_blank" class="btn">👁️ View Resume</a>
   </div>
 
   <main class="resume">
@@ -122,7 +123,7 @@
     <section class="resume-section">
       <h3>Education</h3>
       <p><strong>Bachelor of Technology in Electronics and Communication Engineering (ECE)</strong></p>
-      <p>VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad, India</p>
+      <p>VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad</p>
       <p><em>2019 – 2023</em></p>
       <p>CGPA: 8.09 / 10</p>
     </section>
@@ -132,41 +133,65 @@
       <h3>Certifications</h3>
       <ul>
         <li>
-          <strong>🎓Microsoft Certified: Power BI Data Analyst Associate PL-300</strong><br />
+          <strong>🎓 Microsoft Certified: Power BI Data Analyst Associate (PL-300)</strong><br />
           Issued by Microsoft<br />
-          Expires May 26, 2026 | Earned May 25, 2025<br />
-          <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/D3D27CB2C292B2FD?sharingId=F2154EEB0BC4DFC3" target="_blank" rel="noopener noreferrer" class="btn" style="font-size: 0.85rem; padding: 0.3rem 0.7rem; margin-top: 0.1rem">View Certification</a>
+          Earned: May 25, 2025 | Expires: May 26, 2026<br />
+          <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/D3D27CB2C292B2FD?sharingId=F2154EEB0BC4DFC3"
+             target="_blank" class="btn" style="font-size: 0.85rem; padding: 0.3rem 0.7rem;">
+            View Certification
+          </a>
         </li>
         <li>
-          <strong>🎓Microsoft Certified: Azure Fundamentals AZ-900</strong><br />
-          Issued by Microsoft<br />
-          Issued August 5, 2024<br />
-          <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/28F2B3A4D3310D9E?sharingId=F2154EEB0BC4DFC3" target="_blank" rel="noopener noreferrer" class="btn" style="font-size: 0.85rem; padding: 0.3rem 0.7rem; margin-top: 0.1rem;">View Certification</a>
+          <strong>🎓 Microsoft Certified: Azure Fundamentals (AZ-900)</strong><br />
+          Issued: August 5, 2024<br />
+          <a href="https://learn.microsoft.com/api/credentials/share/en-us/vedasahithimaddineni-5543/28F2B3A4D3310D9E?sharingId=F2154EEB0BC4DFC3"
+             target="_blank" class="btn" style="font-size: 0.85rem; padding: 0.3rem 0.7rem;">
+            View Certification
+          </a>
         </li>
       </ul>
+    </section>
+
+    <!-- Skills -->
+    <section class="resume-section">
+      <h3>Skills</h3>
+      <p><strong>BI & Visualization Tools:</strong> Power BI, Power Query</p>
+      <p><strong>Data Analysis & Modeling:</strong> DAX, Data Modeling, KPI Design</p>
+      <p><strong>Data Sources & Tools:</strong> SQL, Excel</p>
+      <p><strong>Techniques:</strong> Data Cleaning, ETL, Data Transformation, Dashboard Design, Data Storytelling</p>
+      <p><strong>Soft Skills:</strong> Analytical Thinking, Problem Solving, Attention to Detail, Business Understanding, Communication, Stakeholder Collaboration</p>
     </section>
 
     <!-- Work Experience -->
     <section class="resume-section">
       <h3>Work Experience</h3>
-      <p><strong>Accenture</strong> — Data Engineer, Management and Governance Associate (Aug 2023 – June 2025)</p>
-      <p><strong>Promoted to:</strong> Data Engineer, Management and Governance Analyst (June 2025 – Present)</p>
+
+      <p>
+        <strong>Accenture</strong><br />
+        Data Engineer – Management & Governance Associate (Aug 2023 – June 2025)<br />
+        <strong>Promoted to:</strong> Data Engineer – Management & Governance Analyst (June 2025 – Present)
+      </p>
+
       <ul>
-        <li>Develop Power BI reports based on requirements</li>
-        <li>Analyze and clean data using Azure Databricks and DevOps</li>
-        <li>Push data to Snowflake and maintain SaaS cubes via GitHub</li>
+        <li>Designed and developed interactive Power BI dashboards based on business and reporting requirements.</li>
+        <li>Analyzed, validated, and cleaned data using Azure Databricks to ensure high data quality.</li>
+        <li>Built and maintained data pipelines, pushing curated datasets into Snowflake for analytics use cases.</li>
+        <li>Used GitHub and Azure DevOps for version control, deployment, and maintenance of SaaS cubes.</li>
+        <li>Collaborated with cross-functional teams to support data governance and decision-making.</li>
       </ul>
-      <p><em>Technical Skills:</em> Power BI, DAX, SQL, Snowflake (basic), Azure Databricks (basic), Python (basic), Excel</p>
-      <p><em>Soft Skills:</em> Problem solving, teamwork, adaptability, time management</p>
+
+      <p>
+        <em>Tools & Technologies:</em> Power BI, DAX, SQL, Snowflake (basic), Azure Databricks (basic), Python (basic), Excel
+      </p>
     </section>
 
     <!-- Languages -->
     <section class="resume-section">
       <h3>Languages</h3>
       <ul>
-        <li>Telugu (native)</li>
-        <li>English (fluent)</li>
-        <li>Hindi (basic)</li>
+        <li>Telugu (Native)</li>
+        <li>English (Fluent)</li>
+        <li>Hindi (Basic)</li>
       </ul>
     </section>
 
@@ -174,13 +199,12 @@
     <section class="resume-section">
       <h3>Awards & Honors</h3>
       <ul>
-        <li>🏆Promotion in June 2025 (less than 2 years tenure)</li>
+        <li>🏆 Promotion in June 2025 (within less than 2 years)</li>
       </ul>
     </section>
   </main>
 
   <script>
-    // Dark mode toggle script
     const toggle = document.getElementById('dark-mode-toggle');
     const isDark = localStorage.getItem('theme') === 'dark';
 
@@ -191,7 +215,10 @@
 
     toggle.addEventListener('change', () => {
       document.body.classList.toggle('dark-mode');
-      localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+      localStorage.setItem(
+        'theme',
+        document.body.classList.contains('dark-mode') ? 'dark' : 'light'
+      );
     });
   </script>
 </body>
