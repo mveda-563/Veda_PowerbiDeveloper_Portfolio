@@ -1,289 +1,193 @@
-/* General Reset */
+/* ========== RESET ========== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #ffffff;
-    color: #333;
-    transition: all 0.3s ease;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-header, nav, .project-card, .btn {
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* === DARK MODE === */
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
-body.dark-mode header {
-    background: #1e1e1e;
-}
-
-body.dark-mode nav a,
-body.dark-mode nav ul li button {
-    color: #e0e0e0;
-}
-
-body.dark-mode .project-card {
-    background: #1e1e1e;
-    color: #f1f1f1;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-}
-
-body.dark-mode .project-card h3 {
-    color: #00e0e0;
-}
-
-body.dark-mode .project-card .btn {
-    background: #00bfbf;
-    color: #000;
-}
-
-body.dark-mode .btn:hover {
-    background-color: #009999;
-}
-
-/* Header and Navigation */
+/* ========== HEADER & NAV ========== */
 header {
-    background: #f8f9fa;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background: #f8f9fa;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav h1 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 nav ul {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
 }
 
-nav ul li a,
-nav ul li button {
-    text-decoration: none;
-    color: inherit;
-    font-size: 1rem;
-    background: none;
-    border: none;
-    cursor: pointer;
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+  padding-bottom: 3px;
 }
 
-/* Homepage Intro */
+/* ✅ ACTIVE LINK */
+nav ul li a.active {
+  font-weight: bold;
+  color: teal;
+  border-bottom: 2px solid teal;
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+  padding: 0.6rem 1.3rem;
+  background: teal;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #006666;
+}
+
+/* ========== HOME PAGE ========== */
 .intro {
-    padding: 3rem 1rem;
-    text-align: center;
+  padding: 3rem 1rem;
+  text-align: center;
 }
 
 .intro h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+  font-size: 2.5rem;
 }
 
 .intro span {
-    color: teal;
+  color: teal;
 }
 
-.intro .btn {
-    display: inline-block;
-    margin-top: 2rem;
-    padding: 0.75rem 1.5rem;
-    background: teal;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1rem;
+.hero-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-/* Projects Page */
+/* ========== PROJECTS ========== */
 .projects {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: auto;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .project-grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
 .project-card {
-    background: #f1f1f1;
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s;
+  background: #f1f1f1;
+  padding: 1.2rem;
+  border-radius: 12px;
+  transition: transform 0.2s;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
-/* Icon + Title Layout for Project Cards */
-.project-icon-title {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-}
-
-.project-icon-title h3 {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-.project-icon {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-}
-
-/* Description Text */
-.project-card p {
-    font-size: 0.95rem;
-    margin: 0.5rem 0 1rem 0;
-}
-
-/* Lists inside project cards */
-.project-card ul {
-    margin-left: 1.25rem;
-    margin-bottom: 1rem;
-    list-style-type: disc;
-    color: #555;
-}
-
-.project-card ul li {
-    margin-bottom: 0.5rem;
-}
-
-/* Buttons */
-.project-card .btn {
-    padding: 0.5rem 1rem;
-    background: teal;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-}
-
-.project-card .btn:hover {
-    background-color: #006666; /* darker teal */
-    color: white;
-}
-
-/* Power BI Embedded Styling */
-.powerbi-embed iframe {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 100%;
-    height: 400px;
-}
-
-.powerbi-container {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 aspect ratio */
-}
-
-.powerbi-responsive iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
-
-/* Contact Section */
+/* ========== CONTACT ========== */
 .contact {
-    padding: 2rem;
-    max-width: 700px;
-    margin: auto;
-    text-align: center;
+  max-width: 700px;
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-.contact-info h2 {
-    margin-bottom: 1rem;
+.contact a {
+  color: teal;
 }
 
-.contact-info ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
+/* ========== DARK MODE ========== */
+body.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
 }
 
-.contact-info li {
-    margin: 0.5rem 0;
-    font-size: 1rem;
+body.dark-mode header {
+  background: #1e1e1e;
 }
 
-.contact-info a {
-    color: teal;
-    text-decoration: none;
+body.dark-mode nav a.active {
+  color: #00e0e0;
+  border-bottom-color: #00e0e0;
 }
-/* === Sun/Moon Dark Mode Toggle === */
+
+body.dark-mode .project-card {
+  background: #1e1e1e;
+}
+
+body.dark-mode .btn {
+  background: #00bfbf;
+  color: #000;
+}
+
+/* ========== TOGGLE SWITCH ========== */
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 48px;
-    height: 24px;
+  position: relative;
+  width: 48px;
+  height: 24px;
 }
 
 .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  display: none;
 }
 
-.slider.emoji-toggle {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    border-radius: 24px;
-    transition: 0.4s;
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #ccc;
+  border-radius: 24px;
+  cursor: pointer;
 }
 
-.slider.emoji-toggle:before {
-    content: "🌞";
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    left: 2px;
-    bottom: 2px;
-    background-color: white;
-    border-radius: 50%;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.4s;
+.slider:before {
+  content: "🌞";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
 }
 
-/* When dark mode is on */
-.switch input:checked + .slider.emoji-toggle {
-    background-color: #444;
+input:checked + .slider {
+  background: #444;
 }
 
-.switch input:checked + .slider.emoji-toggle:before {
-    transform: translateX(24px);
-    content: "🌙";
+input:checked + .slider:before {
+  transform: translateX(24px);
+  content: "🌙";
 }
