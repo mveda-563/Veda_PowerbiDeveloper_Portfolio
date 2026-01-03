@@ -7,132 +7,136 @@
 
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- Smooth scrolling -->
   <style>
-    html {
-      scroll-behavior: smooth;
+    /* Typing Animation */
+    .typing {
+      display: inline-block;
+      border-right: 2px solid teal;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(22, end), blink 0.7s step-end infinite;
+      max-width: 100%;
+      font-weight: bold;
     }
-    section {
-      padding: 4rem 1rem;
-      scroll-margin-top: 100px;
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 22ch; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* Mobile fix */
+    @media (max-width: 480px) {
+      .typing {
+        white-space: normal;
+        border-right: none;
+        animation: none;
+      }
+    }
+
+    .about {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      color: teal;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 1rem 0;
+    }
+
+    .statement blockquote {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: teal;
+      text-align: center;
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
     }
   </style>
 </head>
 
 <body>
+<header>
+  <nav>
+    <h1>Veda Sahithi</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li>
+        <label class="switch">
+          <input type="checkbox" id="dark-mode-toggle" />
+          <span class="slider"></span>
+        </label>
+      </li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- ================= NAVBAR ================= -->
-  <header>
-    <nav>
-      <h1>Veda Sahithi</h1>
-      <ul>
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#resume" class="nav-link">Resume</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-        <li>
-          <label class="switch">
-            <input type="checkbox" id="dark-mode-toggle" />
-            <span class="slider"></span>
-          </label>
-        </li>
-      </ul>
-    </nav>
-  </header>
+<main class="home">
 
-  <main>
+  <!-- HERO / INTRO -->
+  <section class="intro">
+    <h2 class="typing">Hello, I'm <span>Veda Sahithi</span></h2>
 
-    <!-- ================= HOME ================= -->
-    <section id="home" class="intro">
-      <h2>Hello, I’m <span>Veda Sahithi</span></h2>
-      <p>Power BI Developer | DAX | SQL | Data Modeling</p>
-      <p>I turn raw data into clear, actionable insights through interactive dashboards.</p>
+    <p><strong>Power BI Developer | DAX, Data Modeling & Interactive Dashboards</strong></p>
+    <p>I turn data into insights that drive decisions.</p>
 
-      <div class="hero-buttons">
-        <a href="#projects" class="btn">View Projects</a>
-        <a href="#resume" class="btn">View Resume</a>
-      </div>
-    </section>
+    <!-- ✅ Buttons visible without scrolling -->
+    <div class="hero-buttons">
+      <a href="projects.html" class="btn">View Projects</a>
+      <a href="resume.html" class="btn">View Resume</a>
+    </div>
+  </section>
 
-    <!-- ================= PROJECTS ================= -->
-    <section id="projects" class="projects">
-      <h2 style="text-align:center;">Projects</h2>
+  <!-- ABOUT ME -->
+  <section class="about">
+    <img src="assets/icons/worker.gif" alt="Veda Sahithi Profile GIF" />
+    <h2>About Me</h2>
 
-      <div class="project-grid">
+    <p>
+      I am a Power BI Developer with a strong focus on building interactive dashboards and meaningful reports that turn raw data into actionable insights.
+      I work with Power BI, DAX, Power Query, SQL, and Excel to clean, model, and visualize data effectively.
+    </p>
 
-        <!-- Project 1 -->
-        <div class="project-card">
-          <div class="project-icon-title">
-            <img src="assets/icons/PowerBI-icon.png" class="project-icon" alt="Power BI" />
-            <h3>Bank Marketing Campaign Analysis</h3>
-          </div>
-          <p>
-            An interactive Power BI dashboard analyzing customer behavior and campaign effectiveness
-            to support data-driven marketing decisions.
-          </p>
-          <ul>
-            <li>Built KPIs to track campaign success and response rates</li>
-            <li>Used DAX and Power Query for transformations</li>
-            <li>Enabled slicing by age, job, and contact method</li>
-          </ul>
-          <a href="assets/reports/Bank Marketing Campaign Analysis.pdf" target="_blank" class="btn">View Report</a>
-        </div>
+    <p>
+      I enjoy solving business problems through data storytelling and KPI-driven dashboards.
+      I am actively seeking a Power BI Developer or Data Analyst role where I can contribute to data-driven decision-making.
+    </p>
+  </section>
 
-        <!-- Project 2 -->
-        <div class="project-card">
-          <div class="project-icon-title">
-            <img src="assets/icons/PowerBI-icon.png" class="project-icon" alt="Power BI" />
-            <h3>HR Attrition Dashboard</h3>
-          </div>
-          <p>
-            A clean HR analytics dashboard focused on employee attrition trends and retention insights.
-          </p>
-          <ul>
-            <li>Analyzed attrition by department, role, and tenure</li>
-            <li>Used drill-through for employee-level insights</li>
-            <li>Designed for HR and leadership stakeholders</li>
-          </ul>
-          <a href="assets/reports/HR Attribution Dashboard.pdf" target="_blank" class="btn">View Report</a>
-        </div>
+  <!-- STATEMENT -->
+  <section class="statement">
+    <blockquote>
+      “I believe every dataset has a story — and I’m here to tell it visually.”
+    </blockquote>
+  </section>
 
-      </div>
-    </section>
+</main>
 
-    <!-- ================= RESUME ================= -->
-    <section id="resume">
-      <h2 style="text-align:center;">Resume</h2>
-
-      <p style="text-align:center; max-width:700px; margin:1rem auto;">
-        Power BI Developer with experience building business-focused dashboards using
-        Power BI, DAX, SQL, and cloud-based data platforms.
-      </p>
-
-      <div style="text-align:center; margin-top:1.5rem;">
-        <a href="assets/pdf/resume.pdf" class="btn" download>⬇ Download Resume</a>
-        <a href="assets/pdf/resume.pdf" class="btn" target="_blank">👁 View Resume</a>
-      </div>
-    </section>
-
-    <!-- ================= CONTACT ================= -->
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p>Interested in collaborating or hiring me? Let’s connect.</p>
-
-      <ul style="list-style:none; padding:0; margin-top:1rem;">
-        <li><strong>Name:</strong> Veda Sahithi Maddineni</li>
-        <li><strong>Email:</strong> <a href="mailto:veda4541@gmail.com">veda4541@gmail.com</a></li>
-        <li><strong>Phone:</strong> <a href="tel:+917386752940">+91 7386752940</a></li>
-        <li><strong>LinkedIn:</strong>
-          <a href="https://www.linkedin.com/in/veda-maddineni" target="_blank">
-            linkedin.com/in/veda-maddineni
-          </a>
-        </li>
-      </ul>
-    </section>
-
-  </main>
-
-  <!-- ================= JS ================= -->
-  <script src="./scripts/main.js"></script>
+<!-- ✅ Unified JS -->
+<script src="scripts/main.js"></script>
 </body>
 </html>
+
