@@ -1,18 +1,19 @@
-/* ========== RESET ========== */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ================= BASE ================= */
 body {
   font-family: "Segoe UI", sans-serif;
   background-color: #ffffff;
   color: #333;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ========== HEADER & NAV ========== */
+/* ================= HEADER & NAV ================= */
 header {
   background: #f8f9fa;
   padding: 1rem 2rem;
@@ -34,8 +35,13 @@ nav h1 {
 nav ul {
   list-style: none;
   display: flex;
-  align-items: center;
+  align-items: center; /* ✅ keeps toggle inside navbar */
   gap: 1.2rem;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
 }
 
 nav ul li a {
@@ -45,14 +51,14 @@ nav ul li a {
   padding-bottom: 3px;
 }
 
-/* ✅ ACTIVE LINK */
+/* Active link */
 nav ul li a.active {
   font-weight: bold;
   color: teal;
   border-bottom: 2px solid teal;
 }
 
-/* ========== BUTTONS ========== */
+/* ================= BUTTONS ================= */
 .btn {
   padding: 0.6rem 1.3rem;
   background: teal;
@@ -60,14 +66,14 @@ nav ul li a.active {
   border-radius: 6px;
   text-decoration: none;
   display: inline-block;
-  transition: background 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background: #006666;
+  background-color: #006666;
 }
 
-/* ========== HOME PAGE ========== */
+/* ================= HOME ================= */
 .intro {
   padding: 3rem 1rem;
   text-align: center;
@@ -89,7 +95,7 @@ nav ul li a.active {
   flex-wrap: wrap;
 }
 
-/* ========== PROJECTS ========== */
+/* ================= PROJECTS ================= */
 .projects {
   padding: 2rem;
   max-width: 1200px;
@@ -98,36 +104,69 @@ nav ul li a.active {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .project-card {
   background: #f1f1f1;
   padding: 1.2rem;
   border-radius: 12px;
-  transition: transform 0.2s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
 }
 
-/* ========== CONTACT ========== */
+/* 🔥 PROJECT ICON FIX */
+.project-icon-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.project-icon {
+  width: 36px;           /* ✅ consistent size */
+  height: 36px;
+  object-fit: contain;   /* ✅ no distortion */
+  flex-shrink: 0;
+}
+
+/* Project card text */
+.project-card h3 {
+  font-size: 1.2rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.project-card ul {
+  margin-left: 1.25rem;
+  margin-bottom: 1rem;
+  list-style: disc;
+}
+
+/* ================= CONTACT ================= */
 .contact {
+  padding: 2rem;
   max-width: 700px;
   margin: auto;
-  padding: 2rem;
   text-align: center;
 }
 
 .contact a {
   color: teal;
+  text-decoration: none;
 }
 
-/* ========== DARK MODE ========== */
+/* ================= DARK MODE ================= */
 body.dark-mode {
-  background: #121212;
+  background-color: #121212;
   color: #e0e0e0;
 }
 
@@ -135,13 +174,14 @@ body.dark-mode header {
   background: #1e1e1e;
 }
 
-body.dark-mode nav a.active {
+body.dark-mode nav ul li a.active {
   color: #00e0e0;
   border-bottom-color: #00e0e0;
 }
 
 body.dark-mode .project-card {
   background: #1e1e1e;
+  color: #f1f1f1;
 }
 
 body.dark-mode .btn {
@@ -149,11 +189,18 @@ body.dark-mode .btn {
   color: #000;
 }
 
-/* ========== TOGGLE SWITCH ========== */
+body.dark-mode .btn:hover {
+  background-color: #009999;
+}
+
+/* ================= DARK MODE TOGGLE ================= */
 .switch {
   position: relative;
-  width: 48px;
-  height: 24px;
+  width: 44px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .switch input {
@@ -163,31 +210,33 @@ body.dark-mode .btn {
 .slider {
   position: absolute;
   inset: 0;
-  background: #ccc;
+  background-color: #ccc;
   border-radius: 24px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .slider:before {
   content: "🌞";
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background: #fff;
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
   border-radius: 50%;
   top: 2px;
   left: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s;
+  font-size: 13px;
+  transition: transform 0.3s ease;
 }
 
-input:checked + .slider {
-  background: #444;
+.switch input:checked + .slider {
+  background-color: #444;
 }
 
-input:checked + .slider:before {
-  transform: translateX(24px);
+.switch input:checked + .slider:before {
+  transform: translateX(22px);
   content: "🌙";
 }
