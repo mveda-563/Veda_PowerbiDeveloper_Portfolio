@@ -8,82 +8,27 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <style>
-    /* Typing Animation */
-    .typing {
-      display: inline-block;
-      border-right: 2px solid teal;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: typing 3s steps(22, end), blink 0.7s step-end infinite;
-      max-width: 100%;
-      font-weight: bold;
+    html {
+      scroll-behavior: smooth;
     }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 22ch; }
-    }
-
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-
-    /* Mobile fix */
-    @media (max-width: 480px) {
-      .typing {
-        white-space: normal;
-        border-right: none;
-        animation: none;
-      }
-    }
-
-    .about {
-      padding: 3rem 1rem;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .about img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-
-    .about h2 {
-      font-size: 2rem;
-      color: teal;
-    }
-
-    .about p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin: 1rem 0;
-    }
-
-    .statement blockquote {
-      font-size: 1.3rem;
-      font-style: italic;
-      color: teal;
-      text-align: center;
-      max-width: 700px;
-      margin: 2rem auto;
-      padding: 1rem;
+    section {
+      padding: 4rem 1rem;
+      scroll-margin-top: 100px;
     }
   </style>
 </head>
 
 <body>
+
+<!-- ================= NAV ================= -->
 <header>
   <nav>
     <h1>Veda Sahithi</h1>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#resume" class="nav-link">Resume</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
       <li>
         <label class="switch">
           <input type="checkbox" id="dark-mode-toggle" />
@@ -94,49 +39,149 @@
   </nav>
 </header>
 
-<main class="home">
+<main>
 
-  <!-- HERO / INTRO -->
-  <section class="intro">
-    <h2 class="typing">Hello, I'm <span>Veda Sahithi</span></h2>
+<!-- ================= HOME ================= -->
+<section id="home" class="intro">
+  <h2>Hello, I’m <span>Veda Sahithi</span></h2>
+  <p>Power BI Developer | DAX | SQL | Data Modeling</p>
+  <p>
+    I am a Power BI Developer focused on building interactive dashboards and
+    meaningful reports that turn raw data into actionable business insights.
+  </p>
 
-    <p><strong>Power BI Developer | DAX, Data Modeling & Interactive Dashboards</strong></p>
-    <p>I turn data into insights that drive decisions.</p>
+  <div class="hero-buttons">
+    <a href="#projects" class="btn">View Projects</a>
+    <a href="#resume" class="btn">View Resume</a>
+  </div>
+</section>
 
-    <!-- ✅ Buttons visible without scrolling -->
-    <div class="hero-buttons">
-      <a href="projects.html" class="btn">View Projects</a>
-      <a href="resume.html" class="btn">View Resume</a>
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="projects">
+  <h2 style="text-align:center;">Projects</h2>
+
+  <div class="project-grid">
+
+    <div class="project-card">
+      <div class="project-icon-title">
+        <img src="assets/icons/PowerBI-icon.png" class="project-icon" />
+        <h3>Bank Marketing Campaign Analysis</h3>
+      </div>
+      <p>
+        Power BI dashboard analyzing customer behavior and campaign effectiveness
+        to help marketing teams improve targeting strategies.
+      </p>
+      <ul>
+        <li>Built KPIs and trend analysis for campaign performance</li>
+        <li>Used Power Query and DAX for transformations</li>
+        <li>Interactive slicers by age, job, and contact method</li>
+      </ul>
+      <a href="assets/reports/Bank Marketing Campaign Analysis.pdf" target="_blank" class="btn">
+        View Report
+      </a>
     </div>
-  </section>
 
-  <!-- ABOUT ME -->
-  <section class="about">
-    <img src="assets/icons/worker.gif" alt="Veda Sahithi Profile GIF" />
-    <h2>About Me</h2>
+    <div class="project-card">
+      <div class="project-icon-title">
+        <img src="assets/icons/PowerBI-icon.png" class="project-icon" />
+        <h3>HR Attrition Dashboard</h3>
+      </div>
+      <p>
+        Interactive HR analytics dashboard focused on employee attrition,
+        retention, and workforce insights.
+      </p>
+      <ul>
+        <li>Attrition analysis by department, role, and tenure</li>
+        <li>Drill-through pages for employee-level insights</li>
+        <li>Designed for HR and leadership stakeholders</li>
+      </ul>
+      <a href="assets/reports/HR Attribution Dashboard.pdf" target="_blank" class="btn">
+        View Report
+      </a>
+    </div>
 
+  </div>
+</section>
+
+<!-- ================= RESUME ================= -->
+<section id="resume" class="resume">
+
+  <h2 style="text-align:center;">Resume</h2>
+
+  <!-- Education -->
+  <div class="resume-section">
+    <h3>Education</h3>
+    <p><strong>B.Tech – Electronics & Communication Engineering</strong></p>
+    <p>VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad</p>
+    <p>2019 – 2023 | CGPA: 8.09</p>
+  </div>
+
+  <!-- Certifications -->
+  <div class="resume-section">
+    <h3>Certifications</h3>
+    <ul>
+      <li>
+        <strong>Microsoft Certified: Power BI Data Analyst (PL-300)</strong><br />
+        Earned: May 2025 | Expires: May 2026
+      </li>
+      <li>
+        <strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong><br />
+        Issued: August 2024
+      </li>
+    </ul>
+  </div>
+
+  <!-- Skills -->
+  <div class="resume-section">
+    <h3>Skills</h3>
+    <p><strong>BI & Visualization:</strong> Power BI, Power Query</p>
+    <p><strong>Data Analysis:</strong> DAX, Data Modeling, KPI Design</p>
+    <p><strong>Data Tools:</strong> SQL, Excel</p>
+    <p><strong>Techniques:</strong> ETL, Data Cleaning, Dashboard Design, Storytelling</p>
+  </div>
+
+  <!-- Experience -->
+  <div class="resume-section">
+    <h3>Work Experience</h3>
     <p>
-      I am a Power BI Developer with a strong focus on building interactive dashboards and meaningful reports that turn raw data into actionable insights.
-      I work with Power BI, DAX, Power Query, SQL, and Excel to clean, model, and visualize data effectively.
+      <strong>Accenture</strong><br />
+      Data Engineer – Management & Governance Associate (Aug 2023 – Jun 2025)<br />
+      Promoted to Data Engineer – Analyst (Jun 2025 – Present)
     </p>
+    <ul>
+      <li>Developed Power BI dashboards for business reporting</li>
+      <li>Cleaned and validated data using Azure Databricks</li>
+      <li>Maintained pipelines and datasets in Snowflake</li>
+      <li>Used GitHub and Azure DevOps for version control</li>
+    </ul>
+  </div>
 
-    <p>
-      I enjoy solving business problems through data storytelling and KPI-driven dashboards.
-      I am actively seeking a Power BI Developer or Data Analyst role where I can contribute to data-driven decision-making.
-    </p>
-  </section>
+  <div style="text-align:center; margin-top:1.5rem;">
+    <a href="assets/pdf/resume.pdf" class="btn" download>⬇ Download Resume</a>
+    <a href="assets/pdf/resume.pdf" class="btn" target="_blank">👁 View Resume</a>
+  </div>
 
-  <!-- STATEMENT -->
-  <section class="statement">
-    <blockquote>
-      “I believe every dataset has a story — and I’m here to tell it visually.”
-    </blockquote>
-  </section>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>Interested in collaborating or hiring me? Let’s connect.</p>
+
+  <ul style="list-style:none; padding:0; margin-top:1rem;">
+    <li><strong>Name:</strong> Veda Sahithi Maddineni</li>
+    <li><strong>Email:</strong> <a href="mailto:veda4541@gmail.com">veda4541@gmail.com</a></li>
+    <li><strong>Phone:</strong> <a href="tel:+917386752940">+91 7386752940</a></li>
+    <li><strong>LinkedIn:</strong>
+      <a href="https://www.linkedin.com/in/veda-maddineni" target="_blank">
+        linkedin.com/in/veda-maddineni
+      </a>
+    </li>
+  </ul>
+</section>
 
 </main>
 
-<!-- ✅ Unified JS -->
-<script src="scripts/main.js"></script>
+<script src="./assets/js/main.js"></script>
 </body>
 </html>
-
