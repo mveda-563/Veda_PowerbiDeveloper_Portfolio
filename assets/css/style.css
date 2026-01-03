@@ -26,7 +26,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* ✅ MOBILE FIX */
+  flex-wrap: wrap;
 }
 
 nav h1 {
@@ -38,7 +38,7 @@ nav ul {
   display: flex;
   align-items: center;
   gap: 1rem;
-  flex-wrap: wrap; /* ✅ MOBILE FIX */
+  flex-wrap: wrap;
 }
 
 nav ul li {
@@ -83,7 +83,7 @@ nav ul li a.active {
 }
 
 .intro h2 {
-  font-size: 2rem; /* ✅ smaller on mobile */
+  font-size: 2rem;
 }
 
 .intro span {
@@ -108,7 +108,7 @@ nav ul li a.active {
 .project-grid {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: 1fr; /* ✅ MOBILE DEFAULT */
+  grid-template-columns: 1fr;
 }
 
 .project-card {
@@ -166,36 +166,7 @@ nav ul li a.active {
   text-decoration: none;
 }
 
-/* ================= DARK MODE ================= */
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-body.dark-mode header {
-  background: #1e1e1e;
-}
-
-body.dark-mode nav ul li a.active {
-  color: #00e0e0;
-  border-bottom-color: #00e0e0;
-}
-
-body.dark-mode .project-card {
-  background: #1e1e1e;
-  color: #f1f1f1;
-}
-
-body.dark-mode .btn {
-  background: #00bfbf;
-  color: #000;
-}
-
-body.dark-mode .btn:hover {
-  background-color: #009999;
-}
-
-/* ================= DARK MODE TOGGLE ================= */
+/* ================= TOGGLE ================= */
 .switch {
   position: relative;
   width: 42px;
@@ -215,6 +186,7 @@ body.dark-mode .btn:hover {
   background-color: #ccc;
   border-radius: 24px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .slider:before {
@@ -242,7 +214,7 @@ body.dark-mode .btn:hover {
   content: "🌙";
 }
 
-/* ================= DESKTOP BREAKPOINT ================= */
+/* ================= DESKTOP ================= */
 @media (min-width: 768px) {
   header {
     padding: 1rem 2rem;
@@ -255,4 +227,44 @@ body.dark-mode .btn:hover {
   .project-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
+}
+
+/* ================================================= */
+/* ========== FINAL DARK MODE (FORCE) ========== */
+/* ================================================= */
+
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode header,
+body.dark-mode nav {
+  background-color: #1e1e1e !important;
+}
+
+body.dark-mode nav ul li a {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode nav ul li a.active {
+  color: #00e0e0 !important;
+  border-bottom-color: #00e0e0 !important;
+}
+
+body.dark-mode main,
+body.dark-mode section {
+  background-color: #121212 !important;
+}
+
+body.dark-mode .project-card,
+body.dark-mode .contact-card,
+body.dark-mode .resume-section {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .btn {
+  background-color: #00bfbf !important;
+  color: #000 !important;
 }
