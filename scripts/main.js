@@ -1,19 +1,24 @@
-const toggle = document.getElementById("dark-toggle");
+const toggle = document.getElementById("dark-mode-toggle");
 const body = document.body;
 
-// Load saved theme
+/* Load theme */
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark-mode");
   toggle.checked = true;
 }
 
-// Listen for toggle changes
+/* Toggle theme */
 toggle.addEventListener("change", () => {
-  if (toggle.checked) {
-    body.classList.add("dark-mode");
-    localStorage.setItem("theme", "dark");
-  } else {
-    body.classList.remove("dark-mode");
-    localStorage.setItem("theme", "light");
+  body.classList.toggle("dark-mode");
+  localStorage.setItem(
+    "theme",
+    body.classList.contains("dark-mode") ? "dark" : "light"
+  );
+});
+
+/* Active nav link */
+document.querySelectorAll("nav a").forEach(link => {
+  if (link.href === window.location.href) {
+    link.classList.add("active");
   }
 });
