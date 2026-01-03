@@ -10,18 +10,14 @@
       margin: 0;
       padding: 0;
       scroll-behavior: smooth;
-    }
-
-    /* Wrapper for each page */
-    .section {
-      width: 100%;
-      border: none;
+      background: #fff;
     }
 
     iframe {
       width: 100%;
       border: none;
       display: block;
+      overflow: hidden;
     }
   </style>
 </head>
@@ -29,32 +25,43 @@
 <body>
 
   <!-- HOME -->
-  <iframe
-    src="index.html"
-    class="section"
-    loading="lazy">
-  </iframe>
+  <iframe src="index.html" scrolling="no"></iframe>
 
   <!-- PROJECTS -->
-  <iframe
-    src="projects.html"
-    class="section"
-    loading="lazy">
-  </iframe>
+  <iframe src="projects.html" scrolling="no"></iframe>
 
   <!-- RESUME -->
-  <iframe
-    src="resume.html"
-    class="section"
-    loading="lazy">
-  </iframe>
+  <iframe src="resume.html" scrolling="no"></iframe>
 
   <!-- CONTACT -->
-  <iframe
-    src="contact.html"
-    class="section"
-    loading="lazy">
-  </iframe>
+  <iframe src="contact.html" scrolling="no"></iframe>
+
+  <script>
+    function resizeIframes() {
+      const iframes = document.querySelectorAll("iframe");
+
+      iframes.forEach(iframe => {
+        try {
+          const doc = iframe.contentDocument || iframe.contentWindow.document;
+          if (doc) {
+            iframe.style.height = doc.documentElement.scrollHeight + "px";
+          }
+        } catch (e) {
+          console.warn("Could not resize iframe:", e);
+        }
+      });
+    }
+
+    // Resize after load
+    window.addEventListener("load", () => {
+      resizeIframes();
+      setTimeout(resizeIframes, 500);
+      setTimeout(resizeIframes, 1500);
+    });
+
+    // Resize on window resize
+    window.addEventListener("resize", resizeIframes);
+  </script>
 
 </body>
 </html>
